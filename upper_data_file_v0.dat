@@ -1,0 +1,75 @@
+stx11ver.dat     thermodynamic data file                                                                                                    
+print    | no_print suppresses print output
+plot     | obsolete 6.8.4+
+stx11_solution_model.dat     | solution model file, blank = none                                                                                                                                                                                                
+Khan_2016_Harzbugite_Composition                                                                                                                                                                                                                                
+perplex_option.dat     | Perple_X option file                                                                                                                                                                                                                   
+   10 calculation type: 0- composition, 1- Schreinemakers, 2 - liquidus/solidus, 3- Mixed, 5- gridded min, 7- 1d fract, 8- gwash, 9- 2d fract, 10- 7 w/file input, 11- 9 w/file input, 12- 0d infiltration
+upper_PT.dat     | coordinate file                                                                                                                                                                                          
+    0 unused place holder, post 06
+    0 unused place holder, post 06
+    0 unused place holder, post 06
+    0 unused place holder, post 06
+    0 unused place holder, post 06
+    0 unused place holder, post 06
+    0 unused place holder, post 06
+    0 unused place holder, post 06
+    0 unused place holder, post 06
+    0 number component transformations
+    6 number of components in the data base
+    1 component amounts, 0 - mole, 1 mass
+    0 unused place holder, post 06
+    0 unused place holder, post 06
+    0 unused place holder, post 05
+    0 ifug EoS for saturated phase
+    1 gridded minimization dimension (1 or 2)
+    0 special dependencies: 0 - P and T independent, 1 - P(T), 2 - T(P)
+ 0.00000      0.00000      0.00000      0.00000      0.00000     Geothermal gradient polynomial coeffs.
+
+begin thermodynamic component list
+NA2O  1 0.100000E-01  0.00000      0.00000     mass  amount
+MGO   1  46.3600      0.00000      0.00000     mass  amount
+AL2O3 1 0.650000      0.00000      0.00000     mass  amount
+SIO2  1  43.6400      0.00000      0.00000     mass  amount
+CAO   1 0.500000      0.00000      0.00000     mass  amount
+FEO   1  7.83000      0.00000      0.00000     mass  amount
+end thermodynamic component list
+
+
+begin saturated component list
+end saturated component list
+
+
+begin saturated phase component list
+end saturated phase component list
+
+
+begin independent potential/fugacity/activity list
+end independent potential list
+
+
+begin excluded phase list
+end excluded phase list
+
+
+begin solution phase list
+O         
+Cpx       
+Opx       
+Gt        
+C2/c      
+Wad       
+Ring      
+Aki       
+Pv        
+Ppv       
+Pl        
+CF        
+end solution phase list
+
+   0.00000        0.00000        0.00000        0.00000        0.00000     max p, t, xco2, mu_1, mu_2
+   0.00000        0.00000        0.00000        0.00000        0.00000     min p, t, xco2, mu_1, mu_2
+   0.00000        0.00000        0.00000        0.00000        0.00000     unused place holder post 06
+
+ 1  2  4  5  3   index of the independent & sectioning variables
+

@@ -1,0 +1,91 @@
+
+Seismic wavespeed computational options:
+
+    bounds                  VRH       [VRH] HS
+    vrh/hs_weighting        0.5       [0.5] 0->1
+    explicit_bulk_modulus   T         [T] F
+    poisson_ratio           on        [on] all off; Poisson ratio = 0.35
+    seismic_output          som       [some] none all
+    poisson_test            F         [F] T
+    Anderson-Gruneisen      F         [F] T
+    finite_strain_alpha     F         [F] T
+    Tisza_test              F         [F] T
+    fluid_shear_modulus     T         [T] F
+    phi_d                   0.36      [0.36] 0->1
+
+In the tables below: implicit moduli are calculated rigorously from the EoS,
+explicit moduli are computed from empirical functions provided in the
+thermodynamic data file.
+
+
+Endmembers and stoichiometric compounds:
+
+                      Bulk Mod    Shear Mod 
+                      ---------   ---------
+        ab            implicit    implicit                 
+        alm           implicit    implicit                 
+        aperov        implicit    implicit                 
+        an            implicit    implicit                 
+        seif          implicit    implicit                 
+        appv          implicit    implicit                 
+        ca-pv         implicit    implicit                 
+        cts           implicit    implicit                 
+        cen           implicit    implicit                 
+        cfs           implicit    implicit                 
+        cor           implicit    implicit                 
+        coe           implicit    implicit                 
+        di            implicit    implicit                 
+        en            implicit    implicit                 
+        fc2/c         implicit    implicit                 
+        fa            implicit    implicit                 
+        ffer          implicit    implicit                 
+        faki          implicit    implicit                 
+        fperov        implicit    implicit                 
+        fring         implicit    implicit                 
+        fwad          implicit    implicit                 
+        fo            implicit    implicit                 
+        fppv          implicit    implicit                 
+        fs            implicit    implicit                 
+        gr            implicit    implicit                 
+        herc          implicit    implicit                 
+        hed           implicit    implicit                 
+        jd            implicit    implicit                 
+        jmaj          implicit    implicit                 
+        ky            implicit    implicit                 
+        c2/c          implicit    implicit                 
+        mfer          implicit    implicit                 
+        aki           implicit    implicit                 
+        maj           implicit    implicit                 
+        perov         implicit    implicit                 
+        ring          implicit    implicit                 
+        ts            implicit    implicit                 
+        wad           implicit    implicit                 
+        ppv           implicit    implicit                 
+        nfer          implicit    implicit                 
+        neph          implicit    implicit                 
+        odi           implicit    implicit                 
+        per           implicit    implicit                 
+        py            implicit    implicit                 
+        q             implicit    implicit                 
+        sp            implicit    implicit                 
+        st            implicit    implicit                 
+        wus           implicit    implicit                 
+
+Solutions:
+
+                      Bulk Mod    Shear Mod 
+                      ---------   ---------
+      C2/c            implicit    implicit*
+      Pv              implicit    implicit*
+      Pl              implicit    implicit*
+      O               implicit    implicit*
+      Wad             implicit    implicit*
+      Ring            implicit    implicit*
+      Opx             implicit    implicit*
+      Cpx             implicit    implicit*
+      Aki             implicit    implicit*
+      Gt              implicit    implicit*
+      Ppv             implicit    implicit*
+      CF              implicit    implicit*
+
+*computed as the Reuss average of the implicit endmember shear moduli.

@@ -1,0 +1,1384 @@
+------------------------------------------
+|  Layer No.  |  Section Name    |  Bounds (km)           |
+------------------------------------------
+|  Upper Mantle (0 km to 410 km)                             |
+|       1      |  Upper Mantle  |    0.00 -   5.12    |
+|       2      |  Upper Mantle  |    5.12 -  10.25    |
+|       3      |  Upper Mantle  |   10.25 -  15.38    |
+|       4      |  Upper Mantle  |   15.38 -  20.50    |
+|       5      |  Upper Mantle  |   20.50 -  25.62    |
+|       6      |  Upper Mantle  |   25.62 -  30.75    |
+|       7      |  Upper Mantle  |   30.75 -  35.88    |
+|       8      |  Upper Mantle  |   35.88 -  41.00    |
+|       9      |  Upper Mantle  |   41.00 -  46.12    |
+|      10      |  Upper Mantle  |   46.12 -  51.25    |
+|      11      |  Upper Mantle  |   51.25 -  56.38    |
+|      12      |  Upper Mantle  |   56.38 -  61.50    |
+|      13      |  Upper Mantle  |   61.50 -  66.62    |
+|      14      |  Upper Mantle  |   66.62 -  71.75    |
+|      15      |  Upper Mantle  |   71.75 -  76.88    |
+|      16      |  Upper Mantle  |   76.88 -  82.00    |
+|      17      |  Upper Mantle  |   82.00 -  87.12    |
+|      18      |  Upper Mantle  |   87.12 -  92.25    |
+|      19      |  Upper Mantle  |   92.25 -  97.38    |
+|      20      |  Upper Mantle  |   97.38 - 102.50    |
+|      21      |  Upper Mantle  |  102.50 - 107.62    |
+|      22      |  Upper Mantle  |  107.62 - 112.75    |
+|      23      |  Upper Mantle  |  112.75 - 117.88    |
+|      24      |  Upper Mantle  |  117.88 - 123.00    |
+|      25      |  Upper Mantle  |  123.00 - 128.12    |
+|      26      |  Upper Mantle  |  128.12 - 133.25    |
+|      27      |  Upper Mantle  |  133.25 - 138.38    |
+|      28      |  Upper Mantle  |  138.38 - 143.50    |
+|      29      |  Upper Mantle  |  143.50 - 148.62    |
+|      30      |  Upper Mantle  |  148.62 - 153.75    |
+|      31      |  Upper Mantle  |  153.75 - 158.88    |
+|      32      |  Upper Mantle  |  158.88 - 164.00    |
+|      33      |  Upper Mantle  |  164.00 - 169.12    |
+|      34      |  Upper Mantle  |  169.12 - 174.25    |
+|      35      |  Upper Mantle  |  174.25 - 179.38    |
+|      36      |  Upper Mantle  |  179.38 - 184.50    |
+|      37      |  Upper Mantle  |  184.50 - 189.62    |
+|      38      |  Upper Mantle  |  189.62 - 194.75    |
+|      39      |  Upper Mantle  |  194.75 - 199.88    |
+|      40      |  Upper Mantle  |  199.88 - 205.00    |
+|      41      |  Upper Mantle  |  205.00 - 210.12    |
+|      42      |  Upper Mantle  |  210.12 - 215.25    |
+|      43      |  Upper Mantle  |  215.25 - 220.38    |
+|      44      |  Upper Mantle  |  220.38 - 225.50    |
+|      45      |  Upper Mantle  |  225.50 - 230.62    |
+|      46      |  Upper Mantle  |  230.62 - 235.75    |
+|      47      |  Upper Mantle  |  235.75 - 240.88    |
+|      48      |  Upper Mantle  |  240.88 - 246.00    |
+|      49      |  Upper Mantle  |  246.00 - 251.12    |
+|      50      |  Upper Mantle  |  251.12 - 256.25    |
+|      51      |  Upper Mantle  |  256.25 - 261.38    |
+|      52      |  Upper Mantle  |  261.38 - 266.50    |
+|      53      |  Upper Mantle  |  266.50 - 271.62    |
+|      54      |  Upper Mantle  |  271.62 - 276.75    |
+|      55      |  Upper Mantle  |  276.75 - 281.88    |
+|      56      |  Upper Mantle  |  281.88 - 287.00    |
+|      57      |  Upper Mantle  |  287.00 - 292.12    |
+|      58      |  Upper Mantle  |  292.12 - 297.25    |
+|      59      |  Upper Mantle  |  297.25 - 302.38    |
+|      60      |  Upper Mantle  |  302.38 - 307.50    |
+|      61      |  Upper Mantle  |  307.50 - 312.62    |
+|      62      |  Upper Mantle  |  312.62 - 317.75    |
+|      63      |  Upper Mantle  |  317.75 - 322.88    |
+|      64      |  Upper Mantle  |  322.88 - 328.00    |
+|      65      |  Upper Mantle  |  328.00 - 333.12    |
+|      66      |  Upper Mantle  |  333.12 - 338.25    |
+|      67      |  Upper Mantle  |  338.25 - 343.38    |
+|      68      |  Upper Mantle  |  343.38 - 348.50    |
+|      69      |  Upper Mantle  |  348.50 - 353.62    |
+|      70      |  Upper Mantle  |  353.62 - 358.75    |
+|      71      |  Upper Mantle  |  358.75 - 363.88    |
+|      72      |  Upper Mantle  |  363.88 - 369.00    |
+|      73      |  Upper Mantle  |  369.00 - 374.12    |
+|      74      |  Upper Mantle  |  374.12 - 379.25    |
+|      75      |  Upper Mantle  |  379.25 - 384.38    |
+|      76      |  Upper Mantle  |  384.38 - 389.50    |
+|      77      |  Upper Mantle  |  389.50 - 394.62    |
+|      78      |  Upper Mantle  |  394.62 - 399.75    |
+|      79      |  Upper Mantle  |  399.75 - 404.88    |
+|      80      |  Upper Mantle  |  404.88 - 410.00    |
+------------------------------------------
+|  Transition Zone (410 km to 660 km)                         |
+|      81      |  Transition Z. |  410.00 - 415.00    |
+|      82      |  Transition Z. |  415.00 - 420.00    |
+|      83      |  Transition Z. |  420.00 - 425.00    |
+|      84      |  Transition Z. |  425.00 - 430.00    |
+|      85      |  Transition Z. |  430.00 - 435.00    |
+|      86      |  Transition Z. |  435.00 - 440.00    |
+|      87      |  Transition Z. |  440.00 - 445.00    |
+|      88      |  Transition Z. |  445.00 - 450.00    |
+|      89      |  Transition Z. |  450.00 - 455.00    |
+|      90      |  Transition Z. |  455.00 - 460.00    |
+|      91      |  Transition Z. |  460.00 - 465.00    |
+|      92      |  Transition Z. |  465.00 - 470.00    |
+|      93      |  Transition Z. |  470.00 - 475.00    |
+|      94      |  Transition Z. |  475.00 - 480.00    |
+|      95      |  Transition Z. |  480.00 - 485.00    |
+|      96      |  Transition Z. |  485.00 - 490.00    |
+|      97      |  Transition Z. |  490.00 - 495.00    |
+|      98      |  Transition Z. |  495.00 - 500.00    |
+|      99      |  Transition Z. |  500.00 - 505.00    |
+|     100      |  Transition Z. |  505.00 - 510.00    |
+|     101      |  Transition Z. |  510.00 - 515.00    |
+|     102      |  Transition Z. |  515.00 - 520.00    |
+|     103      |  Transition Z. |  520.00 - 525.00    |
+|     104      |  Transition Z. |  525.00 - 530.00    |
+|     105      |  Transition Z. |  530.00 - 535.00    |
+|     106      |  Transition Z. |  535.00 - 540.00    |
+|     107      |  Transition Z. |  540.00 - 545.00    |
+|     108      |  Transition Z. |  545.00 - 550.00    |
+|     109      |  Transition Z. |  550.00 - 555.00    |
+|     110      |  Transition Z. |  555.00 - 560.00    |
+|     111      |  Transition Z. |  560.00 - 565.00    |
+|     112      |  Transition Z. |  565.00 - 570.00    |
+|     113      |  Transition Z. |  570.00 - 575.00    |
+|     114      |  Transition Z. |  575.00 - 580.00    |
+|     115      |  Transition Z. |  580.00 - 585.00    |
+|     116      |  Transition Z. |  585.00 - 590.00    |
+|     117      |  Transition Z. |  590.00 - 595.00    |
+|     118      |  Transition Z. |  595.00 - 600.00    |
+|     119      |  Transition Z. |  600.00 - 605.00    |
+|     120      |  Transition Z. |  605.00 - 610.00    |
+|     121      |  Transition Z. |  610.00 - 615.00    |
+|     122      |  Transition Z. |  615.00 - 620.00    |
+|     123      |  Transition Z. |  620.00 - 625.00    |
+|     124      |  Transition Z. |  625.00 - 630.00    |
+|     125      |  Transition Z. |  630.00 - 635.00    |
+|     126      |  Transition Z. |  635.00 - 640.00    |
+|     127      |  Transition Z. |  640.00 - 645.00    |
+|     128      |  Transition Z. |  645.00 - 650.00    |
+|     129      |  Transition Z. |  650.00 - 655.00    |
+|     130      |  Transition Z. |  655.00 - 660.00    |
+------------------------------------------
+|  Lower Mantle (660 km to 2900 km)                           |
+|     131      |  Lower Mantle  |  660.00 - 678.67    |
+|     132      |  Lower Mantle  |  678.67 - 697.33    |
+|     133      |  Lower Mantle  |  697.33 - 716.00    |
+|     134      |  Lower Mantle  |  716.00 - 734.67    |
+|     135      |  Lower Mantle  |  734.67 - 753.33    |
+|     136      |  Lower Mantle  |  753.33 - 772.00    |
+|     137      |  Lower Mantle  |  772.00 - 790.67    |
+|     138      |  Lower Mantle  |  790.67 - 809.33    |
+|     139      |  Lower Mantle  |  809.33 - 828.00    |
+|     140      |  Lower Mantle  |  828.00 - 846.67    |
+|     141      |  Lower Mantle  |  846.67 - 865.33    |
+|     142      |  Lower Mantle  |  865.33 - 884.00    |
+|     143      |  Lower Mantle  |  884.00 - 902.67    |
+|     144      |  Lower Mantle  |  902.67 - 921.33    |
+|     145      |  Lower Mantle  |  921.33 - 940.00    |
+|     146      |  Lower Mantle  |  940.00 - 958.67    |
+|     147      |  Lower Mantle  |  958.67 - 977.33    |
+|     148      |  Lower Mantle  |  977.33 - 996.00    |
+|     149      |  Lower Mantle  |  996.00 - 1014.67    |
+|     150      |  Lower Mantle  |  1014.67 - 1033.33    |
+|     151      |  Lower Mantle  |  1033.33 - 1052.00    |
+|     152      |  Lower Mantle  |  1052.00 - 1070.67    |
+|     153      |  Lower Mantle  |  1070.67 - 1089.33    |
+|     154      |  Lower Mantle  |  1089.33 - 1108.00    |
+|     155      |  Lower Mantle  |  1108.00 - 1126.67    |
+|     156      |  Lower Mantle  |  1126.67 - 1145.33    |
+|     157      |  Lower Mantle  |  1145.33 - 1164.00    |
+|     158      |  Lower Mantle  |  1164.00 - 1182.67    |
+|     159      |  Lower Mantle  |  1182.67 - 1201.33    |
+|     160      |  Lower Mantle  |  1201.33 - 1220.00    |
+|     161      |  Lower Mantle  |  1220.00 - 1238.67    |
+|     162      |  Lower Mantle  |  1238.67 - 1257.33    |
+|     163      |  Lower Mantle  |  1257.33 - 1276.00    |
+|     164      |  Lower Mantle  |  1276.00 - 1294.67    |
+|     165      |  Lower Mantle  |  1294.67 - 1313.33    |
+|     166      |  Lower Mantle  |  1313.33 - 1332.00    |
+|     167      |  Lower Mantle  |  1332.00 - 1350.67    |
+|     168      |  Lower Mantle  |  1350.67 - 1369.33    |
+|     169      |  Lower Mantle  |  1369.33 - 1388.00    |
+|     170      |  Lower Mantle  |  1388.00 - 1406.67    |
+|     171      |  Lower Mantle  |  1406.67 - 1425.33    |
+|     172      |  Lower Mantle  |  1425.33 - 1444.00    |
+|     173      |  Lower Mantle  |  1444.00 - 1462.67    |
+|     174      |  Lower Mantle  |  1462.67 - 1481.33    |
+|     175      |  Lower Mantle  |  1481.33 - 1500.00    |
+|     176      |  Lower Mantle  |  1500.00 - 1518.67    |
+|     177      |  Lower Mantle  |  1518.67 - 1537.33    |
+|     178      |  Lower Mantle  |  1537.33 - 1556.00    |
+|     179      |  Lower Mantle  |  1556.00 - 1574.67    |
+|     180      |  Lower Mantle  |  1574.67 - 1593.33    |
+|     181      |  Lower Mantle  |  1593.33 - 1612.00    |
+|     182      |  Lower Mantle  |  1612.00 - 1630.67    |
+|     183      |  Lower Mantle  |  1630.67 - 1649.33    |
+|     184      |  Lower Mantle  |  1649.33 - 1668.00    |
+|     185      |  Lower Mantle  |  1668.00 - 1686.67    |
+|     186      |  Lower Mantle  |  1686.67 - 1705.33    |
+|     187      |  Lower Mantle  |  1705.33 - 1724.00    |
+|     188      |  Lower Mantle  |  1724.00 - 1742.67    |
+|     189      |  Lower Mantle  |  1742.67 - 1761.33    |
+|     190      |  Lower Mantle  |  1761.33 - 1780.00    |
+|     191      |  Lower Mantle  |  1780.00 - 1798.67    |
+|     192      |  Lower Mantle  |  1798.67 - 1817.33    |
+|     193      |  Lower Mantle  |  1817.33 - 1836.00    |
+|     194      |  Lower Mantle  |  1836.00 - 1854.67    |
+|     195      |  Lower Mantle  |  1854.67 - 1873.33    |
+|     196      |  Lower Mantle  |  1873.33 - 1892.00    |
+|     197      |  Lower Mantle  |  1892.00 - 1910.67    |
+|     198      |  Lower Mantle  |  1910.67 - 1929.33    |
+|     199      |  Lower Mantle  |  1929.33 - 1948.00    |
+|     200      |  Lower Mantle  |  1948.00 - 1966.67    |
+|     201      |  Lower Mantle  |  1966.67 - 1985.33    |
+|     202      |  Lower Mantle  |  1985.33 - 2004.00    |
+|     203      |  Lower Mantle  |  2004.00 - 2022.67    |
+|     204      |  Lower Mantle  |  2022.67 - 2041.33    |
+|     205      |  Lower Mantle  |  2041.33 - 2060.00    |
+|     206      |  Lower Mantle  |  2060.00 - 2078.67    |
+|     207      |  Lower Mantle  |  2078.67 - 2097.33    |
+|     208      |  Lower Mantle  |  2097.33 - 2116.00    |
+|     209      |  Lower Mantle  |  2116.00 - 2134.67    |
+|     210      |  Lower Mantle  |  2134.67 - 2153.33    |
+|     211      |  Lower Mantle  |  2153.33 - 2172.00    |
+|     212      |  Lower Mantle  |  2172.00 - 2190.67    |
+|     213      |  Lower Mantle  |  2190.67 - 2209.33    |
+|     214      |  Lower Mantle  |  2209.33 - 2228.00    |
+|     215      |  Lower Mantle  |  2228.00 - 2246.67    |
+|     216      |  Lower Mantle  |  2246.67 - 2265.33    |
+|     217      |  Lower Mantle  |  2265.33 - 2284.00    |
+|     218      |  Lower Mantle  |  2284.00 - 2302.67    |
+|     219      |  Lower Mantle  |  2302.67 - 2321.33    |
+|     220      |  Lower Mantle  |  2321.33 - 2340.00    |
+|     221      |  Lower Mantle  |  2340.00 - 2358.67    |
+|     222      |  Lower Mantle  |  2358.67 - 2377.33    |
+|     223      |  Lower Mantle  |  2377.33 - 2396.00    |
+|     224      |  Lower Mantle  |  2396.00 - 2414.67    |
+|     225      |  Lower Mantle  |  2414.67 - 2433.33    |
+|     226      |  Lower Mantle  |  2433.33 - 2452.00    |
+|     227      |  Lower Mantle  |  2452.00 - 2470.67    |
+|     228      |  Lower Mantle  |  2470.67 - 2489.33    |
+|     229      |  Lower Mantle  |  2489.33 - 2508.00    |
+|     230      |  Lower Mantle  |  2508.00 - 2526.67    |
+|     231      |  Lower Mantle  |  2526.67 - 2545.33    |
+|     232      |  Lower Mantle  |  2545.33 - 2564.00    |
+|     233      |  Lower Mantle  |  2564.00 - 2582.67    |
+|     234      |  Lower Mantle  |  2582.67 - 2601.33    |
+|     235      |  Lower Mantle  |  2601.33 - 2620.00    |
+|     236      |  Lower Mantle  |  2620.00 - 2638.67    |
+|     237      |  Lower Mantle  |  2638.67 - 2657.33    |
+|     238      |  Lower Mantle  |  2657.33 - 2676.00    |
+|     239      |  Lower Mantle  |  2676.00 - 2694.67    |
+|     240      |  Lower Mantle  |  2694.67 - 2713.33    |
+|     241      |  Lower Mantle  |  2713.33 - 2732.00    |
+|     242      |  Lower Mantle  |  2732.00 - 2750.67    |
+|     243      |  Lower Mantle  |  2750.67 - 2769.33    |
+|     244      |  Lower Mantle  |  2769.33 - 2788.00    |
+|     245      |  Lower Mantle  |  2788.00 - 2806.67    |
+|     246      |  Lower Mantle  |  2806.67 - 2825.33    |
+|     247      |  Lower Mantle  |  2825.33 - 2844.00    |
+|     248      |  Lower Mantle  |  2844.00 - 2862.67    |
+|     249      |  Lower Mantle  |  2862.67 - 2881.33    |
+|     250      |  Lower Mantle  |  2881.33 - 2900.00    |
+------------------------------------------
+Deleting file: upper_data_file_v1.arf
+Deleting file: upper_data_file_v1_auto_refine.txt
+Deleting file: upper_data_file_v1.tof
+Deleting file: upper_data_file_v1.prn
+Deleting file: upper_data_file_v1.plt
+Deleting file: upper_data_file_v1.blk
+Deleting file: upper_data_file_v1.tim
+Deleting file: upper_data_file_v1_seismic_data.txt
+Deleting file: upper_data_file_v1_1.tab
+Deleting file: upper_data_file_v1_1.plt
+Deleting file: middle_data_file_v1.arf
+Deleting file: middle_data_file_v1_auto_refine.txt
+Deleting file: middle_data_file_v1.tof
+Deleting file: middle_data_file_v1.prn
+Deleting file: middle_data_file_v1.plt
+Deleting file: middle_data_file_v1.blk
+Deleting file: middle_data_file_v1.tim
+Deleting file: middle_data_file_v1_seismic_data.txt
+Deleting file: middle_data_file_v1_1.tab
+Deleting file: middle_data_file_v1_1.plt
+Deleting file: lower_data_file_v1.arf
+Deleting file: lower_data_file_v1_auto_refine.txt
+Deleting file: lower_data_file_v1.tof
+Deleting file: lower_data_file_v1.prn
+Deleting file: lower_data_file_v1.plt
+Deleting file: lower_data_file_v1.blk
+Deleting file: lower_data_file_v1.tim
+Deleting file: lower_data_file_v1_seismic_data.txt
+Deleting file: lower_data_file_v1_1.tab
+Deleting file: lower_data_file_v1_1.plt
+Deleting file: combined_tab_file.tab
+File processing completed. Check the output file: upper_data_file_v1.dat
+File processing completed. Check the output file: middle_data_file_v1.dat
+File processing completed. Check the output file: lower_data_file_v1.dat
+
+modify_perplex_datafile good!
+Executing command: ./vertex < upper_mantle_vertex_parameters_file
+
+Perple_X release 7.1.7 Sep 11, 2024.
+
+Copyright (C) 1986-2024 James A D Connolly <www.perplex.ethz.ch/copyright.html>.
+
+Enter the project name (the name assigned in BUILD) [default = my_project]:
+
+Reading problem definition from file: upper_data_file_v1.dat                                                                              
+Reading thermodynamic data from file: stx11ver.dat                                                                                        
+Writing print output to file: upper_data_file_v1.plt                                                                              
+Writing plot output to file: upper_data_file_v1.plt                                                                              
+Writing phase assemblage data to file: upper_data_file_v1.blk                                                                              
+Reading solution models from file: stx11_solution_model.dat                                                                            
+
+Reading Perple_X options from: perplex_option.dat
+Writing auto refine summary to: not requested
+Writing seismic data options to: upper_data_file_v1_seismic_data.txt
+Writing pseudocompound glossary to: not requested
+Writing Perple_X option summary to: not requested
+
+Perple_X computational option settings for VERTEX:
+
+    Keyword:               Value:     Permitted values [default]:
+
+  Auto-refine options:
+
+    auto_refine             aut       [auto] manual off
+    replicate_threshold     0.1E-1    [1e-2]; static opt; <0 => no replica test
+    rep_dynamic_threshold   0.1E-2    [1d-3]; dynamic opt; <0 => no replica test
+    re-refine               F         [F] T
+    intermediate_savrpc     F         [F] T
+    intermediate_savdyn     F         [F] T
+    keep_all_rpcs           T         [T] F
+
+  Free energy minimization options:
+
+    MINFRC_diff_increment   0.1E-6    [1e-7] 1e-3 => 1e-9
+    MINFXC_solver            0        [0] >= 0 - speci2, -1 - MINFXC
+    optimization_max_it     40        [40] >1
+    optimization_precision  0.1E-3    [1e-4], 1e-1 => 1e-6, absolute
+    dynamic_LP_start        war       [warm] cold hot
+    static_LP_start         war       [hot] cold warm
+    order_check             F         [F] T
+    refinement_points        8        [auto] 1->14
+    refinement_switch       F         [T] F
+    scatter-points          T         [T] F
+    scatter-increment       0.1E-1    [1e-2] 1e-2 => 1e-7
+    solvus_tolerance_II     aut       [0.2] 0->1 
+    zero_mode               0.1E-7    [1e-6] 0->1; < 0 => off
+
+  Fractionation path options:
+
+    1d_path                40 /150    [20/150] >0, <2048
+
+  Solution subdivision options:
+
+    initial_resolution:     0.2000    [1/5] 0->1; 0 => off
+    stretch_factor          0.0020    [2d-3] >0 
+    non_linear_switch       F         [F] T
+    subdivision_override    off       [lin] off str
+    refine_endmembers       F         [F] T
+
+  Thermodynamic options:
+
+    solvus_tolerance        aut       [aut] or 0->1; aut = automatic, 0 => p=c pseudocompounds, 1 => homogenize
+    T_stop (K)              0.0       [0]
+    T_melt (K)              873.0     [873]
+    approx_alpha            T         [T] F
+    Anderson-Gruneisen      F         [F] T
+    finite_strain_alpha     F         [F] T
+    speciation_precision    0.1E-4    [1d-5] <1; absolute
+    speciation_max_it       100       [100]
+    function_tolerance_exp  0.8       [0.8] sets x in tol = epsmch^x
+    GFSM                    F         [F] T GFSM/special_component toggle
+    hybrid_EoS_H2O          4         [4] 0-2, 4-7
+    hybrid_EoS_CO2          4         [4] 0-4, 7
+    hybrid_EoS_CH4          0         [0] 0-1, 7
+    aq_lagged_speciation    F         [F] T
+    aq_fractionation_simpl  F         [F] T
+    aq_ion_H+               T         [T] F => use OH-
+    aq_oxide_components     F         [F] T
+    aq_solvent_solvus       T         [T] F
+    aq_solvent_solvus_tol   0.5       [0.5] 0-1
+    aq_vapor_epsilon        1.0       [1.]
+
+  Input/Output options:
+
+    timing                  T         [T] F
+    auto_exclude            T         [T] F
+    output_iteration_detai  F         [F] T
+    output_iteration_g      F         [F] T
+    logarithmic_p           F         [F] T
+    logarithmic_X           F         [F] T
+    bad_number              NaN       [NaN]
+    interim_results         aut       [auto] off manual
+
+  Information file output options:
+
+    option_list_files       F         [F] T; echo computational options
+    pseudocompound_file     F         [F] T; echo static pseudocompound compositions
+    auto_refine_file        F         [T] F; echo auto-refine compositions
+    seismic_data_file       T         [F] T; echo seismic wavespeed options
+
+  Error/warning control options:
+
+    pause_on_error          T         [T] F
+    max_warn_limit            5       [5]
+    warn_interactive        T         [T] F
+    aq_error_ver100         F         [F] T, abort during iteration
+    aq_error_ver101         T         [T] F, solute undersaturation abort
+    aq_error_ver102         T         [T] F, pure + impure solvent abort
+    aq_error_ver103         T         [T] F, out-of-range HKF g abort
+    aq_error_ver104         T         [T] F, abort on failed respeciation
+    warning_ver637          T         [T] F
+    error_ver109            T         [T] F
+    do_not_reset_options    F         [F] T, prevents automatic resets
+
+To change these options see: www.perplex.ethz.ch/perplex_options.html
+
+
+**warning ver099**  no data for aqueous species, aq_output and aq_lagged_speciation disabled.
+
+--------------------------------------------------------------------------------
+Solution model summary:
+
+       4 pseudocompounds generated for: C2/c      
+      18 pseudocompounds generated for: Pv        
+       4 pseudocompounds generated for: Pl        
+       4 pseudocompounds generated for: O         
+       4 pseudocompounds generated for: Wad       
+       4 pseudocompounds generated for: Ring      
+      52 pseudocompounds generated for: Opx       
+     121 pseudocompounds generated for: Cpx       
+      18 pseudocompounds generated for: Aki       
+     121 pseudocompounds generated for: Gt        
+      18 pseudocompounds generated for: Ppv       
+      18 pseudocompounds generated for: CF        
+
+Total number of pseudocompounds:     386
+
+Summary of included solution models:
+
+C2/c       Pv         Pl         O          Wad        Ring       Opx        Cpx       
+Aki        Gt         Ppv        CF        
+--------------------------------------------------------------------------------
+** Starting exploratory computational stage **
+
+
+Choose computational mode:
+     0 - no fractionation [default]
+     1 - fractionate specified phases
+     2 - fractionate all phases other than liquid
+
+--------------------------------------------------------------------------------
+Exploratory stage generated:
+
+       7 compositions for: C2/c      
+       0 compositions for: Pv        
+       8 compositions for: Pl        
+       6 compositions for: O         
+       4 compositions for: Wad       
+       1 compositions for: Ring      
+      35 compositions for: Opx       
+      61 compositions for: Cpx       
+       2 compositions for: Aki       
+      53 compositions for: Gt        
+       1 compositions for: Ppv       
+       1 compositions for: CF        
+
+Total number of compositions:     179
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+** Starting auto-refine computational stage **
+
+--------------------------------------------------------------------------------
+     Timing                    min.         % of total
+
+  Static G calculation       0.54357E-03         1.7
+  Dynamic G calculation      0.71522E-02        21.9
+  Static LP                  0.11633E-03         0.4
+  Dynamic LP                 0.70529E-02        21.6
+  Successive QP              0.15607E-01        47.8
+  Total of above             0.30472E-01        93.3
+  Total elapsed time         0.32661E-01       100.0
+--------------------------------------------------------------------------------
+
+End of job: upper_data_file_v1                                                                                  
+
+--------------------------------------------------------------------------------
+
+      362502
+Program 'vertex' executed successfully with input from 'upper_mantle_vertex_parameters_file'.
+Executing command: ./werami < upper_mantle_werami_parameters_file
+
+Perple_X release 7.1.7 Sep 11, 2024.
+
+Copyright (C) 1986-2024 James A D Connolly <www.perplex.ethz.ch/copyright.html>.
+
+Enter the project name (the name assigned in BUILD) [default = my_project]:
+
+Reading Perple_X options from: perplex_option.dat
+Writing Perple_X option summary to: not requested
+
+Perple_X computational option settings for WERAMI:
+
+    Keyword:               Value:     Permitted values [default]:
+
+  Input/Output options:
+
+    aqueous_output          T         [F] T
+    aqeuous_species         20        [20] 0-150
+    aq_solvent_composition  y         [y] m: y => mol fraction, m => molality
+    aq_solute_composition   m         y [m]: y => mol fraction, m => molality
+    spreadsheet             T         [F] T
+    logarithmic_p           F         [F] T
+    logarithmic_X           F         [F] T
+    bad_number             NaN        [NaN]
+    composition_constant    F         [F] T
+    composition_phase       mol       [mol] wt
+    composition_system      wt        [wt] mol
+    proportions             vol       [vol] wt mol
+    absolute                F         [F] T
+    cumulative              T         [F] T
+    fancy_cumulative_modes  T         [F] T
+    interpolation           on        [on] off 
+    melt_is_fluid           T         [T] F
+    solution_names          mod       [model] abbreviation full
+    structural_formulae     T         [T] F
+    output_species          T         [T] F
+    output_species_props    F         [F] T
+    seismic_output          som       [some] none all
+    poisson_test            F         [F] T
+    interim_results         aut       [auto] off manual
+    sample_on_grid          T         [T] F
+
+  Information file output options:
+
+    option_list_files       F         [F] T; echo computational options
+
+  Thermodynamic options:
+
+    approx_alpha            T         [T] F
+    Anderson-Gruneisen      F         [F] T
+    finite_strain_alpha     F         [F] T
+    hybrid_EoS_H2O             4      [4] 0-2, 4-7
+    hybrid_EoS_CO2             4      [4] 0-4, 7
+    hybrid_EoS_CH4             0      [0] 0-1, 7
+    fd_expansion_factor     2.0       [2] >0
+    finite_difference_p     1.0E+04   [1d4] >0; fraction = 1.0E-03   [1d-3]
+
+  Seismic wavespeed computational options:
+
+    seismic_data_file       T         [F] T
+    bounds                  VRH       [VRH] HS
+    vrh/hs_weighting        0.5       [0.5] 0->1
+    explicit_bulk_modulus   T         [T] F
+    poisson_ratio           on        [on] all off; Poisson ratio = 0.35
+    seismic_output          som       [some] none all
+    poisson_test            F         [F] T
+    Tisza_test              F         [F] T
+    fluid_shear_modulus     T         [T] F
+    phi_d                   0.36      [0.36] 0->1
+
+  Error/warning control options:
+
+    pause_on_error          T         [T] F
+    max_warn_limit            5       [5]
+    warn_interactive        T         [T] F
+    aq_error_ver100         F         [F] T, abort during iteration
+    aq_error_ver101         T         [T] F, solute undersaturation abort
+    aq_error_ver102         T         [T] F, pure + impure solvent abort
+    aq_error_ver103         T         [T] F, out-of-range HKF g abort
+    aq_error_ver104         T         [T] F, abort on failed respeciation
+    warning_ver637          T         [T] F
+    error_ver109            T         [T] F
+    do_not_reset_options    F         [F] T, prevents automatic resets
+
+To change these options see: www.perplex.ethz.ch/perplex_options.html
+
+--------------------------------------------------------------------------------
+Select operational mode:
+    1 - properties at specified conditions
+    3 - properties along the 1d computational path
+    0 - EXIT
+
+Select a property:
+    1 - Specific Enthalpy (J/m3)                                    
+    2 - Density (kg/m3)                                             
+    3 - Specific heat capacity (J/K/m3)                             
+    4 - Expansivity (1/K, for volume)                               
+    5 - Compressibility (1/bar, for volume)                         
+    6 - Composition (Mol, Mass, or Wt%) of the system               
+    7 - Mode (Vol, Mol, or Wt proportion) of a phase                
+    8 - Composition (Mol, Mass, or Wt%) of a solution phase         
+    9 - Grueneisen thermal ratio                                    
+   10 - Adiabatic bulk modulus (bar)                                
+   11 - Adiabatic shear modulus (bar)                               
+   12 - Sound velocity (km/s)                                       
+   13 - P-wave velocity (Vp, km/s)                                  
+   14 - S-wave velocity (Vs, km/s)                                  
+   15 - Vp/Vs                                                       
+   16 - Specific entropy (J/K/m3)                                   
+   17 - Entropy (J/K/kg)                                            
+   18 - Enthalpy (J/kg)                                             
+   19 - Heat Capacity (J/K/kg)                                      
+   20 - Specific mass of a phase (kg/m3-system)                     
+   21 - Poisson ratio                                               
+   22 - Molar Volume (J/bar)                                        
+   23 - Dependent potentials (J/mol, bar, K)                        
+   24 - Assemblage Index                                            
+   25 - Modes of all phases                                         
+   26 - Sound velocity T derivative (km/s/K)                        
+   27 - P-wave velocity T derivative (km/s/K)                       
+   28 - S-wave velocity T derivative (km/s/K)                       
+   29 - Adiabatic bulk modulus T derivative (bar/K)                 
+   30 - Shear modulus T derivative (bar/K)                          
+   31 - Sound velocity P derivative (km/s/bar)                      
+   32 - P-wave velocity P derivative (km/s/bar)                     
+   33 - S-wave velocity P derivative (km/s/bar)                     
+   34 - Adiabatic bulk modulus P derivative (unitless)              
+   35 - Shear modulus P derivative (unitless)                       
+   36 - All phase &/or system properties                            
+   37 - Absolute amount (Vol, Mol, or Wt) of a phase                
+   38 - Multiple property output                                    
+   39 - Heat capacity ratio (Cp/Cv)                                 
+   40 - Lagged or back-calculated aqueous solute chemistry          
+
+Output cumulative modes (y/n)?
+(see www.perplex.ethz.ch/perplex_options.html#cumulative_modes)
+
+Data ranges excluding values equal to bad_number (       NaN) specified in perplex_option.dat:
+
+     O              Cpx            Opx            Pl             sp             Gt             C2/c           Wad           
+min    47.5802        5.83458        5.67981        4.10934       0.409844        3.51710        5.60754        13.6604     
+max    64.5717        21.3412        19.2024        11.7217       0.611065        19.8358        7.96281        60.3428     
+
+Output has been written to two files:
+
+     plt format is in file: upper_data_file_v1_1.plt                                                                            
+     1d tab format is in file: upper_data_file_v1_1.tab                                                                            
+
+plt format files can be plotted with:
+
+     PSVDRAW
+
+1d tab format files can be processed with:
+
+     PSTABLE - a Perple_X plotting program
+     PERPLE_X_PLOT - a Matlab plotting script
+     spread-sheet programs, e.g., EXCEL
+
+for details on tab format refer to:
+     perplex.ethz.ch/perplex/faq/Perple_X_tab_file_format.txt
+
+Select operational mode:
+    1 - properties at specified conditions
+    3 - properties along the 1d computational path
+    0 - EXIT
+Program 'werami' executed successfully with input from 'upper_mantle_werami_parameters_file'.
+Executing command: ./vertex < middle_mantle_vertex_parameters_file
+
+Perple_X release 7.1.7 Sep 11, 2024.
+
+Copyright (C) 1986-2024 James A D Connolly <www.perplex.ethz.ch/copyright.html>.
+
+Enter the project name (the name assigned in BUILD) [default = my_project]:
+
+Reading problem definition from file: middle_data_file_v1.dat                                                                             
+Reading thermodynamic data from file: stx11ver.dat                                                                                        
+Writing print output to file: middle_data_file_v1.plt                                                                             
+Writing plot output to file: middle_data_file_v1.plt                                                                             
+Writing phase assemblage data to file: middle_data_file_v1.blk                                                                             
+Reading solution models from file: stx11_solution_model.dat                                                                            
+
+Reading Perple_X options from: perplex_option.dat
+Writing auto refine summary to: not requested
+Writing seismic data options to: middle_data_file_v1_seismic_data.txt
+Writing pseudocompound glossary to: not requested
+Writing Perple_X option summary to: not requested
+
+Perple_X computational option settings for VERTEX:
+
+    Keyword:               Value:     Permitted values [default]:
+
+  Auto-refine options:
+
+    auto_refine             aut       [auto] manual off
+    replicate_threshold     0.1E-1    [1e-2]; static opt; <0 => no replica test
+    rep_dynamic_threshold   0.1E-2    [1d-3]; dynamic opt; <0 => no replica test
+    re-refine               F         [F] T
+    intermediate_savrpc     F         [F] T
+    intermediate_savdyn     F         [F] T
+    keep_all_rpcs           T         [T] F
+
+  Free energy minimization options:
+
+    MINFRC_diff_increment   0.1E-6    [1e-7] 1e-3 => 1e-9
+    MINFXC_solver            0        [0] >= 0 - speci2, -1 - MINFXC
+    optimization_max_it     40        [40] >1
+    optimization_precision  0.1E-3    [1e-4], 1e-1 => 1e-6, absolute
+    dynamic_LP_start        war       [warm] cold hot
+    static_LP_start         war       [hot] cold warm
+    order_check             F         [F] T
+    refinement_points        8        [auto] 1->14
+    refinement_switch       F         [T] F
+    scatter-points          T         [T] F
+    scatter-increment       0.1E-1    [1e-2] 1e-2 => 1e-7
+    solvus_tolerance_II     aut       [0.2] 0->1 
+    zero_mode               0.1E-7    [1e-6] 0->1; < 0 => off
+
+  Fractionation path options:
+
+    1d_path                40 /150    [20/150] >0, <2048
+
+  Solution subdivision options:
+
+    initial_resolution:     0.2000    [1/5] 0->1; 0 => off
+    stretch_factor          0.0020    [2d-3] >0 
+    non_linear_switch       F         [F] T
+    subdivision_override    off       [lin] off str
+    refine_endmembers       F         [F] T
+
+  Thermodynamic options:
+
+    solvus_tolerance        aut       [aut] or 0->1; aut = automatic, 0 => p=c pseudocompounds, 1 => homogenize
+    T_stop (K)              0.0       [0]
+    T_melt (K)              873.0     [873]
+    approx_alpha            T         [T] F
+    Anderson-Gruneisen      F         [F] T
+    finite_strain_alpha     F         [F] T
+    speciation_precision    0.1E-4    [1d-5] <1; absolute
+    speciation_max_it       100       [100]
+    function_tolerance_exp  0.8       [0.8] sets x in tol = epsmch^x
+    GFSM                    F         [F] T GFSM/special_component toggle
+    hybrid_EoS_H2O          4         [4] 0-2, 4-7
+    hybrid_EoS_CO2          4         [4] 0-4, 7
+    hybrid_EoS_CH4          0         [0] 0-1, 7
+    aq_lagged_speciation    F         [F] T
+    aq_fractionation_simpl  F         [F] T
+    aq_ion_H+               T         [T] F => use OH-
+    aq_oxide_components     F         [F] T
+    aq_solvent_solvus       T         [T] F
+    aq_solvent_solvus_tol   0.5       [0.5] 0-1
+    aq_vapor_epsilon        1.0       [1.]
+
+  Input/Output options:
+
+    timing                  T         [T] F
+    auto_exclude            T         [T] F
+    output_iteration_detai  F         [F] T
+    output_iteration_g      F         [F] T
+    logarithmic_p           F         [F] T
+    logarithmic_X           F         [F] T
+    bad_number              NaN       [NaN]
+    interim_results         aut       [auto] off manual
+
+  Information file output options:
+
+    option_list_files       F         [F] T; echo computational options
+    pseudocompound_file     F         [F] T; echo static pseudocompound compositions
+    auto_refine_file        F         [T] F; echo auto-refine compositions
+    seismic_data_file       T         [F] T; echo seismic wavespeed options
+
+  Error/warning control options:
+
+    pause_on_error          T         [T] F
+    max_warn_limit            5       [5]
+    warn_interactive        T         [T] F
+    aq_error_ver100         F         [F] T, abort during iteration
+    aq_error_ver101         T         [T] F, solute undersaturation abort
+    aq_error_ver102         T         [T] F, pure + impure solvent abort
+    aq_error_ver103         T         [T] F, out-of-range HKF g abort
+    aq_error_ver104         T         [T] F, abort on failed respeciation
+    warning_ver637          T         [T] F
+    error_ver109            T         [T] F
+    do_not_reset_options    F         [F] T, prevents automatic resets
+
+To change these options see: www.perplex.ethz.ch/perplex_options.html
+
+
+**warning ver099**  no data for aqueous species, aq_output and aq_lagged_speciation disabled.
+
+--------------------------------------------------------------------------------
+Solution model summary:
+
+       4 pseudocompounds generated for: C2/c      
+      18 pseudocompounds generated for: Pv        
+       4 pseudocompounds generated for: Pl        
+       4 pseudocompounds generated for: O         
+       4 pseudocompounds generated for: Wad       
+       4 pseudocompounds generated for: Ring      
+      52 pseudocompounds generated for: Opx       
+     121 pseudocompounds generated for: Cpx       
+      18 pseudocompounds generated for: Aki       
+     121 pseudocompounds generated for: Gt        
+      18 pseudocompounds generated for: Ppv       
+      18 pseudocompounds generated for: CF        
+
+Total number of pseudocompounds:     386
+
+Summary of included solution models:
+
+C2/c       Pv         Pl         O          Wad        Ring       Opx        Cpx       
+Aki        Gt         Ppv        CF        
+--------------------------------------------------------------------------------
+** Starting exploratory computational stage **
+
+
+Choose computational mode:
+     0 - no fractionation [default]
+     1 - fractionate specified phases
+     2 - fractionate all phases other than liquid
+
+--------------------------------------------------------------------------------
+Exploratory stage generated:
+
+       2 compositions for: C2/c      
+       1 compositions for: Pv        
+       1 compositions for: Pl        
+       1 compositions for: O         
+       7 compositions for: Wad       
+       8 compositions for: Ring      
+       2 compositions for: Opx       
+      27 compositions for: Cpx       
+       4 compositions for: Aki       
+      61 compositions for: Gt        
+       1 compositions for: Ppv       
+       3 compositions for: CF        
+
+Total number of compositions:     118
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+** Starting auto-refine computational stage **
+
+--------------------------------------------------------------------------------
+     Timing                    min.         % of total
+
+  Static G calculation       0.30303E-03         1.5
+  Dynamic G calculation      0.43429E-02        22.0
+  Static LP                  0.68200E-04         0.3
+  Dynamic LP                 0.42523E-02        21.6
+  Successive QP              0.93622E-02        47.5
+  Total of above             0.18329E-01        92.9
+  Total elapsed time         0.19719E-01       100.0
+--------------------------------------------------------------------------------
+
+End of job: middle_data_file_v1                                                                                 
+
+--------------------------------------------------------------------------------
+
+      244654
+Program 'vertex' executed successfully with input from 'middle_mantle_vertex_parameters_file'.
+Executing command: ./werami < middle_mantle_werami_parameters_file
+
+Perple_X release 7.1.7 Sep 11, 2024.
+
+Copyright (C) 1986-2024 James A D Connolly <www.perplex.ethz.ch/copyright.html>.
+
+Enter the project name (the name assigned in BUILD) [default = my_project]:
+
+Reading Perple_X options from: perplex_option.dat
+Writing Perple_X option summary to: not requested
+
+Perple_X computational option settings for WERAMI:
+
+    Keyword:               Value:     Permitted values [default]:
+
+  Input/Output options:
+
+    aqueous_output          T         [F] T
+    aqeuous_species         20        [20] 0-150
+    aq_solvent_composition  y         [y] m: y => mol fraction, m => molality
+    aq_solute_composition   m         y [m]: y => mol fraction, m => molality
+    spreadsheet             T         [F] T
+    logarithmic_p           F         [F] T
+    logarithmic_X           F         [F] T
+    bad_number             NaN        [NaN]
+    composition_constant    F         [F] T
+    composition_phase       mol       [mol] wt
+    composition_system      wt        [wt] mol
+    proportions             vol       [vol] wt mol
+    absolute                F         [F] T
+    cumulative              T         [F] T
+    fancy_cumulative_modes  T         [F] T
+    interpolation           on        [on] off 
+    melt_is_fluid           T         [T] F
+    solution_names          mod       [model] abbreviation full
+    structural_formulae     T         [T] F
+    output_species          T         [T] F
+    output_species_props    F         [F] T
+    seismic_output          som       [some] none all
+    poisson_test            F         [F] T
+    interim_results         aut       [auto] off manual
+    sample_on_grid          T         [T] F
+
+  Information file output options:
+
+    option_list_files       F         [F] T; echo computational options
+
+  Thermodynamic options:
+
+    approx_alpha            T         [T] F
+    Anderson-Gruneisen      F         [F] T
+    finite_strain_alpha     F         [F] T
+    hybrid_EoS_H2O             4      [4] 0-2, 4-7
+    hybrid_EoS_CO2             4      [4] 0-4, 7
+    hybrid_EoS_CH4             0      [0] 0-1, 7
+    fd_expansion_factor     2.0       [2] >0
+    finite_difference_p     1.0E+04   [1d4] >0; fraction = 1.0E-03   [1d-3]
+
+  Seismic wavespeed computational options:
+
+    seismic_data_file       T         [F] T
+    bounds                  VRH       [VRH] HS
+    vrh/hs_weighting        0.5       [0.5] 0->1
+    explicit_bulk_modulus   T         [T] F
+    poisson_ratio           on        [on] all off; Poisson ratio = 0.35
+    seismic_output          som       [some] none all
+    poisson_test            F         [F] T
+    Tisza_test              F         [F] T
+    fluid_shear_modulus     T         [T] F
+    phi_d                   0.36      [0.36] 0->1
+
+  Error/warning control options:
+
+    pause_on_error          T         [T] F
+    max_warn_limit            5       [5]
+    warn_interactive        T         [T] F
+    aq_error_ver100         F         [F] T, abort during iteration
+    aq_error_ver101         T         [T] F, solute undersaturation abort
+    aq_error_ver102         T         [T] F, pure + impure solvent abort
+    aq_error_ver103         T         [T] F, out-of-range HKF g abort
+    aq_error_ver104         T         [T] F, abort on failed respeciation
+    warning_ver637          T         [T] F
+    error_ver109            T         [T] F
+    do_not_reset_options    F         [F] T, prevents automatic resets
+
+To change these options see: www.perplex.ethz.ch/perplex_options.html
+
+--------------------------------------------------------------------------------
+Select operational mode:
+    1 - properties at specified conditions
+    3 - properties along the 1d computational path
+    0 - EXIT
+
+Select a property:
+    1 - Specific Enthalpy (J/m3)                                    
+    2 - Density (kg/m3)                                             
+    3 - Specific heat capacity (J/K/m3)                             
+    4 - Expansivity (1/K, for volume)                               
+    5 - Compressibility (1/bar, for volume)                         
+    6 - Composition (Mol, Mass, or Wt%) of the system               
+    7 - Mode (Vol, Mol, or Wt proportion) of a phase                
+    8 - Composition (Mol, Mass, or Wt%) of a solution phase         
+    9 - Grueneisen thermal ratio                                    
+   10 - Adiabatic bulk modulus (bar)                                
+   11 - Adiabatic shear modulus (bar)                               
+   12 - Sound velocity (km/s)                                       
+   13 - P-wave velocity (Vp, km/s)                                  
+   14 - S-wave velocity (Vs, km/s)                                  
+   15 - Vp/Vs                                                       
+   16 - Specific entropy (J/K/m3)                                   
+   17 - Entropy (J/K/kg)                                            
+   18 - Enthalpy (J/kg)                                             
+   19 - Heat Capacity (J/K/kg)                                      
+   20 - Specific mass of a phase (kg/m3-system)                     
+   21 - Poisson ratio                                               
+   22 - Molar Volume (J/bar)                                        
+   23 - Dependent potentials (J/mol, bar, K)                        
+   24 - Assemblage Index                                            
+   25 - Modes of all phases                                         
+   26 - Sound velocity T derivative (km/s/K)                        
+   27 - P-wave velocity T derivative (km/s/K)                       
+   28 - S-wave velocity T derivative (km/s/K)                       
+   29 - Adiabatic bulk modulus T derivative (bar/K)                 
+   30 - Shear modulus T derivative (bar/K)                          
+   31 - Sound velocity P derivative (km/s/bar)                      
+   32 - P-wave velocity P derivative (km/s/bar)                     
+   33 - S-wave velocity P derivative (km/s/bar)                     
+   34 - Adiabatic bulk modulus P derivative (unitless)              
+   35 - Shear modulus P derivative (unitless)                       
+   36 - All phase &/or system properties                            
+   37 - Absolute amount (Vol, Mol, or Wt) of a phase                
+   38 - Multiple property output                                    
+   39 - Heat capacity ratio (Cp/Cv)                                 
+   40 - Lagged or back-calculated aqueous solute chemistry          
+
+Output cumulative modes (y/n)?
+(see www.perplex.ethz.ch/perplex_options.html#cumulative_modes)
+
+Data ranges excluding values equal to bad_number (       NaN) specified in perplex_option.dat:
+
+     Cpx            Gt             C2/c           Wad            Ring           st             ca-pv          Aki           
+min   0.481111        15.7704       0.614600E-001   8.20738        1.79730       0.438267       0.299979        4.40796     
+max    13.9268        39.0164        4.90662        60.7775        73.5868        4.46976        4.43874        18.1814     
+
+Output has been written to two files:
+
+     plt format is in file: middle_data_file_v1_1.plt                                                                           
+     1d tab format is in file: middle_data_file_v1_1.tab                                                                           
+
+plt format files can be plotted with:
+
+     PSVDRAW
+
+1d tab format files can be processed with:
+
+     PSTABLE - a Perple_X plotting program
+     PERPLE_X_PLOT - a Matlab plotting script
+     spread-sheet programs, e.g., EXCEL
+
+for details on tab format refer to:
+     perplex.ethz.ch/perplex/faq/Perple_X_tab_file_format.txt
+
+Select operational mode:
+    1 - properties at specified conditions
+    3 - properties along the 1d computational path
+    0 - EXIT
+Program 'werami' executed successfully with input from 'middle_mantle_werami_parameters_file'.
+Executing command: ./vertex < lower_mantle_vertex_parameters_file
+
+Perple_X release 7.1.7 Sep 11, 2024.
+
+Copyright (C) 1986-2024 James A D Connolly <www.perplex.ethz.ch/copyright.html>.
+
+Enter the project name (the name assigned in BUILD) [default = my_project]:
+
+Reading problem definition from file: lower_data_file_v1.dat                                                                              
+Reading thermodynamic data from file: stx11ver.dat                                                                                        
+Writing print output to file: lower_data_file_v1.plt                                                                              
+Writing plot output to file: lower_data_file_v1.plt                                                                              
+Writing phase assemblage data to file: lower_data_file_v1.blk                                                                              
+Reading solution models from file: stx11_solution_model.dat                                                                            
+
+Reading Perple_X options from: perplex_option.dat
+Writing auto refine summary to: not requested
+Writing seismic data options to: lower_data_file_v1_seismic_data.txt
+Writing pseudocompound glossary to: not requested
+Writing Perple_X option summary to: not requested
+
+Perple_X computational option settings for VERTEX:
+
+    Keyword:               Value:     Permitted values [default]:
+
+  Auto-refine options:
+
+    auto_refine             aut       [auto] manual off
+    replicate_threshold     0.1E-1    [1e-2]; static opt; <0 => no replica test
+    rep_dynamic_threshold   0.1E-2    [1d-3]; dynamic opt; <0 => no replica test
+    re-refine               F         [F] T
+    intermediate_savrpc     F         [F] T
+    intermediate_savdyn     F         [F] T
+    keep_all_rpcs           T         [T] F
+
+  Free energy minimization options:
+
+    MINFRC_diff_increment   0.1E-6    [1e-7] 1e-3 => 1e-9
+    MINFXC_solver            0        [0] >= 0 - speci2, -1 - MINFXC
+    optimization_max_it     40        [40] >1
+    optimization_precision  0.1E-3    [1e-4], 1e-1 => 1e-6, absolute
+    dynamic_LP_start        war       [warm] cold hot
+    static_LP_start         war       [hot] cold warm
+    order_check             F         [F] T
+    refinement_points        8        [auto] 1->14
+    refinement_switch       F         [T] F
+    scatter-points          T         [T] F
+    scatter-increment       0.1E-1    [1e-2] 1e-2 => 1e-7
+    solvus_tolerance_II     aut       [0.2] 0->1 
+    zero_mode               0.1E-7    [1e-6] 0->1; < 0 => off
+
+  Fractionation path options:
+
+    1d_path                40 /150    [20/150] >0, <2048
+
+  Solution subdivision options:
+
+    initial_resolution:     0.2000    [1/5] 0->1; 0 => off
+    stretch_factor          0.0020    [2d-3] >0 
+    non_linear_switch       F         [F] T
+    subdivision_override    off       [lin] off str
+    refine_endmembers       F         [F] T
+
+  Thermodynamic options:
+
+    solvus_tolerance        aut       [aut] or 0->1; aut = automatic, 0 => p=c pseudocompounds, 1 => homogenize
+    T_stop (K)              0.0       [0]
+    T_melt (K)              873.0     [873]
+    approx_alpha            T         [T] F
+    Anderson-Gruneisen      F         [F] T
+    finite_strain_alpha     F         [F] T
+    speciation_precision    0.1E-4    [1d-5] <1; absolute
+    speciation_max_it       100       [100]
+    function_tolerance_exp  0.8       [0.8] sets x in tol = epsmch^x
+    GFSM                    F         [F] T GFSM/special_component toggle
+    hybrid_EoS_H2O          4         [4] 0-2, 4-7
+    hybrid_EoS_CO2          4         [4] 0-4, 7
+    hybrid_EoS_CH4          0         [0] 0-1, 7
+    aq_lagged_speciation    F         [F] T
+    aq_fractionation_simpl  F         [F] T
+    aq_ion_H+               T         [T] F => use OH-
+    aq_oxide_components     F         [F] T
+    aq_solvent_solvus       T         [T] F
+    aq_solvent_solvus_tol   0.5       [0.5] 0-1
+    aq_vapor_epsilon        1.0       [1.]
+
+  Input/Output options:
+
+    timing                  T         [T] F
+    auto_exclude            T         [T] F
+    output_iteration_detai  F         [F] T
+    output_iteration_g      F         [F] T
+    logarithmic_p           F         [F] T
+    logarithmic_X           F         [F] T
+    bad_number              NaN       [NaN]
+    interim_results         aut       [auto] off manual
+
+  Information file output options:
+
+    option_list_files       F         [F] T; echo computational options
+    pseudocompound_file     F         [F] T; echo static pseudocompound compositions
+    auto_refine_file        F         [T] F; echo auto-refine compositions
+    seismic_data_file       T         [F] T; echo seismic wavespeed options
+
+  Error/warning control options:
+
+    pause_on_error          T         [T] F
+    max_warn_limit            5       [5]
+    warn_interactive        T         [T] F
+    aq_error_ver100         F         [F] T, abort during iteration
+    aq_error_ver101         T         [T] F, solute undersaturation abort
+    aq_error_ver102         T         [T] F, pure + impure solvent abort
+    aq_error_ver103         T         [T] F, out-of-range HKF g abort
+    aq_error_ver104         T         [T] F, abort on failed respeciation
+    warning_ver637          T         [T] F
+    error_ver109            T         [T] F
+    do_not_reset_options    F         [F] T, prevents automatic resets
+
+To change these options see: www.perplex.ethz.ch/perplex_options.html
+
+
+**warning ver099**  no data for aqueous species, aq_output and aq_lagged_speciation disabled.
+
+--------------------------------------------------------------------------------
+Solution model summary:
+
+       4 pseudocompounds generated for: C2/c      
+      18 pseudocompounds generated for: Pv        
+       4 pseudocompounds generated for: Pl        
+       4 pseudocompounds generated for: O         
+       4 pseudocompounds generated for: Wad       
+       4 pseudocompounds generated for: Ring      
+      52 pseudocompounds generated for: Opx       
+     121 pseudocompounds generated for: Cpx       
+      18 pseudocompounds generated for: Aki       
+     121 pseudocompounds generated for: Gt        
+      18 pseudocompounds generated for: Ppv       
+      18 pseudocompounds generated for: CF        
+
+Total number of pseudocompounds:     386
+
+Summary of included solution models:
+
+C2/c       Pv         Pl         O          Wad        Ring       Opx        Cpx       
+Aki        Gt         Ppv        CF        
+--------------------------------------------------------------------------------
+** Starting exploratory computational stage **
+
+
+Choose computational mode:
+     0 - no fractionation [default]
+     1 - fractionate specified phases
+     2 - fractionate all phases other than liquid
+
+  100 optimizations completed...
+--------------------------------------------------------------------------------
+Exploratory stage generated:
+
+       1 compositions for: C2/c      
+      12 compositions for: Pv        
+       0 compositions for: Pl        
+       1 compositions for: O         
+       4 compositions for: Wad       
+       4 compositions for: Ring      
+       0 compositions for: Opx       
+       1 compositions for: Cpx       
+       7 compositions for: Aki       
+      10 compositions for: Gt        
+      13 compositions for: Ppv       
+      59 compositions for: CF        
+
+Total number of compositions:     112
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+** Starting auto-refine computational stage **
+
+  100 optimizations completed...
+--------------------------------------------------------------------------------
+     Timing                    min.         % of total
+
+  Static G calculation       0.87693E-03         3.6
+  Dynamic G calculation      0.49837E-02        20.7
+  Static LP                  0.11512E-03         0.5
+  Dynamic LP                 0.54092E-02        22.5
+  Successive QP              0.10729E-01        44.6
+  Total of above             0.22114E-01        91.8
+  Total elapsed time         0.24081E-01       100.0
+--------------------------------------------------------------------------------
+
+End of job: lower_data_file_v1                                                                                  
+
+--------------------------------------------------------------------------------
+
+      292254
+Program 'vertex' executed successfully with input from 'lower_mantle_vertex_parameters_file'.
+Executing command: ./werami < lower_mantle_werami_parameters_file
+
+Perple_X release 7.1.7 Sep 11, 2024.
+
+Copyright (C) 1986-2024 James A D Connolly <www.perplex.ethz.ch/copyright.html>.
+
+Enter the project name (the name assigned in BUILD) [default = my_project]:
+
+Reading Perple_X options from: perplex_option.dat
+Writing Perple_X option summary to: not requested
+
+Perple_X computational option settings for WERAMI:
+
+    Keyword:               Value:     Permitted values [default]:
+
+  Input/Output options:
+
+    aqueous_output          T         [F] T
+    aqeuous_species         20        [20] 0-150
+    aq_solvent_composition  y         [y] m: y => mol fraction, m => molality
+    aq_solute_composition   m         y [m]: y => mol fraction, m => molality
+    spreadsheet             T         [F] T
+    logarithmic_p           F         [F] T
+    logarithmic_X           F         [F] T
+    bad_number             NaN        [NaN]
+    composition_constant    F         [F] T
+    composition_phase       mol       [mol] wt
+    composition_system      wt        [wt] mol
+    proportions             vol       [vol] wt mol
+    absolute                F         [F] T
+    cumulative              T         [F] T
+    fancy_cumulative_modes  T         [F] T
+    interpolation           on        [on] off 
+    melt_is_fluid           T         [T] F
+    solution_names          mod       [model] abbreviation full
+    structural_formulae     T         [T] F
+    output_species          T         [T] F
+    output_species_props    F         [F] T
+    seismic_output          som       [some] none all
+    poisson_test            F         [F] T
+    interim_results         aut       [auto] off manual
+    sample_on_grid          T         [T] F
+
+  Information file output options:
+
+    option_list_files       F         [F] T; echo computational options
+
+  Thermodynamic options:
+
+    approx_alpha            T         [T] F
+    Anderson-Gruneisen      F         [F] T
+    finite_strain_alpha     F         [F] T
+    hybrid_EoS_H2O             4      [4] 0-2, 4-7
+    hybrid_EoS_CO2             4      [4] 0-4, 7
+    hybrid_EoS_CH4             0      [0] 0-1, 7
+    fd_expansion_factor     2.0       [2] >0
+    finite_difference_p     1.0E+04   [1d4] >0; fraction = 1.0E-03   [1d-3]
+
+  Seismic wavespeed computational options:
+
+    seismic_data_file       T         [F] T
+    bounds                  VRH       [VRH] HS
+    vrh/hs_weighting        0.5       [0.5] 0->1
+    explicit_bulk_modulus   T         [T] F
+    poisson_ratio           on        [on] all off; Poisson ratio = 0.35
+    seismic_output          som       [some] none all
+    poisson_test            F         [F] T
+    Tisza_test              F         [F] T
+    fluid_shear_modulus     T         [T] F
+    phi_d                   0.36      [0.36] 0->1
+
+  Error/warning control options:
+
+    pause_on_error          T         [T] F
+    max_warn_limit            5       [5]
+    warn_interactive        T         [T] F
+    aq_error_ver100         F         [F] T, abort during iteration
+    aq_error_ver101         T         [T] F, solute undersaturation abort
+    aq_error_ver102         T         [T] F, pure + impure solvent abort
+    aq_error_ver103         T         [T] F, out-of-range HKF g abort
+    aq_error_ver104         T         [T] F, abort on failed respeciation
+    warning_ver637          T         [T] F
+    error_ver109            T         [T] F
+    do_not_reset_options    F         [F] T, prevents automatic resets
+
+To change these options see: www.perplex.ethz.ch/perplex_options.html
+
+--------------------------------------------------------------------------------
+Select operational mode:
+    1 - properties at specified conditions
+    3 - properties along the 1d computational path
+    0 - EXIT
+
+Select a property:
+    1 - Specific Enthalpy (J/m3)                                    
+    2 - Density (kg/m3)                                             
+    3 - Specific heat capacity (J/K/m3)                             
+    4 - Expansivity (1/K, for volume)                               
+    5 - Compressibility (1/bar, for volume)                         
+    6 - Composition (Mol, Mass, or Wt%) of the system               
+    7 - Mode (Vol, Mol, or Wt proportion) of a phase                
+    8 - Composition (Mol, Mass, or Wt%) of a solution phase         
+    9 - Grueneisen thermal ratio                                    
+   10 - Adiabatic bulk modulus (bar)                                
+   11 - Adiabatic shear modulus (bar)                               
+   12 - Sound velocity (km/s)                                       
+   13 - P-wave velocity (Vp, km/s)                                  
+   14 - S-wave velocity (Vs, km/s)                                  
+   15 - Vp/Vs                                                       
+   16 - Specific entropy (J/K/m3)                                   
+   17 - Entropy (J/K/kg)                                            
+   18 - Enthalpy (J/kg)                                             
+   19 - Heat Capacity (J/K/kg)                                      
+   20 - Specific mass of a phase (kg/m3-system)                     
+   21 - Poisson ratio                                               
+   22 - Molar Volume (J/bar)                                        
+   23 - Dependent potentials (J/mol, bar, K)                        
+   24 - Assemblage Index                                            
+   25 - Modes of all phases                                         
+   26 - Sound velocity T derivative (km/s/K)                        
+   27 - P-wave velocity T derivative (km/s/K)                       
+   28 - S-wave velocity T derivative (km/s/K)                       
+   29 - Adiabatic bulk modulus T derivative (bar/K)                 
+   30 - Shear modulus T derivative (bar/K)                          
+   31 - Sound velocity P derivative (km/s/bar)                      
+   32 - P-wave velocity P derivative (km/s/bar)                     
+   33 - S-wave velocity P derivative (km/s/bar)                     
+   34 - Adiabatic bulk modulus P derivative (unitless)              
+   35 - Shear modulus P derivative (unitless)                       
+   36 - All phase &/or system properties                            
+   37 - Absolute amount (Vol, Mol, or Wt) of a phase                
+   38 - Multiple property output                                    
+   39 - Heat capacity ratio (Cp/Cv)                                 
+   40 - Lagged or back-calculated aqueous solute chemistry          
+
+Output cumulative modes (y/n)?
+(see www.perplex.ethz.ch/perplex_options.html#cumulative_modes)
+
+Data ranges excluding values equal to bad_number (       NaN) specified in perplex_option.dat:
+
+     Gt             Ring           Pv             ca-pv          per            CF             wus            Ppv           
+min    7.96561        30.2970        16.9438        4.52527        9.47712       0.308973       0.186478E-001   20.2386     
+max    16.3257        62.2052        72.4211        6.25581        17.8549        5.99177        2.18716        71.7959     
+
+Output has been written to two files:
+
+     plt format is in file: lower_data_file_v1_1.plt                                                                            
+     1d tab format is in file: lower_data_file_v1_1.tab                                                                            
+
+plt format files can be plotted with:
+
+     PSVDRAW
+
+1d tab format files can be processed with:
+
+     PSTABLE - a Perple_X plotting program
+     PERPLE_X_PLOT - a Matlab plotting script
+     spread-sheet programs, e.g., EXCEL
+
+for details on tab format refer to:
+     perplex.ethz.ch/perplex/faq/Perple_X_tab_file_format.txt
+
+Select operational mode:
+    1 - properties at specified conditions
+    3 - properties along the 1d computational path
+    0 - EXIT
+Program 'werami' executed successfully with input from 'lower_mantle_werami_parameters_file'.
+Latest .tab file: upper_data_file_v1_1.tab
+Warning: New mineral found: Pl. Adding it to keywords list.
+Data map successfully written to mineral_phase_upper.dat
+Latest .tab file: middle_data_file_v1_1.tab
+Data map successfully written to mineral_phase_middle.dat
+Latest .tab file: lower_data_file_v1_1.tab
+Data map successfully written to mineral_phase_lower.dat
