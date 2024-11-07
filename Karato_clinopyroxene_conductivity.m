@@ -1,8 +1,8 @@
 % ------------------------------------------------------------------------
-% FUNCTION: Karato_garnet_conductivity
+% FUNCTION: Karato_clinopyroxene_conductivity
 % ------------------------------------------------------------------------
 % DESCRIPTION:
-% Compute the conductivity of garnet using Karato's group high temperature
+% Compute the conductivity of clinopyroxene using Karato's group high temperature
 % and pressure experiments.
 %
 % FORMULA:
@@ -15,16 +15,15 @@
 %   - r1, r2 are constants that depend on the mechanism of electrical conduction.
 %   - E1, E2 are the activation energies.
 %   - V1, V2 are the activation volumes.
-%   - Subscript 1 stands for polaron conduction.
+%   - Subscript 1 stands for polaron conduction (e.g., Fe).
 %   - Subscript 2 stands for proton conduction (e.g., H).
-%   - T is absolute temperature (in Kelvin)
-%   - P is the pressure (in Pascal)
 %
 % REFERENCES:
 % Values of A, r, E, V are from:
-%   Karato, S. I. (2011). Water distribution across the mantle transition zone
-%   and its implications for global material circulation. Earth and Planetary
-%   Science Letters, 301(3–4), 413–423. https://doi.org/10.1016/j.epsl.2010.11.038
+%   Xiaozhi Yang, Hans Keppler, Catherine McCammon, Huaiwei Ni, Qunke Xia, Qicheng Fan (2011). 
+%   Effect of water on the electrical conductivity of lower crustal clinopyroxene,
+%   Journal of Geophysical Research: Solid Earth, 116(B4),
+%   https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2010JB008010
 %
 % UNITS:
 %   - temperature: Kelvin (K); 0 K is equivalent to -273.15°C.
@@ -32,25 +31,25 @@
 %   - pressure: Pascal (Pa); 1 Pa = 1 J/m³ = 1e-6 J/cc.
 %
 % INPUTS:
-%   T   - Temperature in Kelvin.
-%   Cw  - Water content (dimensionless).
-%   P   - Pressure in Pascal.
+%   temperature   - Temperature in Kelvin.
+%   water_content - Water content (dimensionless) (wt%).
+%   pressure      - Pressure in Pascal.
 %
 % OUTPUT:
 %   sigma - Electrical conductivity (S/m).
 % ------------------------------------------------------------------------
 
-function sigma = Karato_garnet_conductivity(T, Cw, P)
+function sigma = Karato_clinopyroxene_conductivity(T, Cw, P)
     % Constants
     R = 8.314;       % Gas constant, J/(K⋅mol)
-    A1 = 10^(2.1);   % Pre-exponential factor for polaron conduction, S/m
-    A2 = 10^(2.7);   % Pre-exponential factor for proton conduction, S/m
+    A1 = 10^(2.16);  % Pre-exponential factor for polaron conduction (dry), S/m
+    A2 = 10^(3.56);  % Pre-exponential factor for proton conduction (wet), S/m
     r1 = 0;          % Empirical constant for polaron conduction
-    r2 = 0.63;       % Empirical constant for proton conduction
-    E1 = 128000;     % Activation energy for polaron conduction, J/mol
-    E2 = 70000;      % Activation energy for proton conduction, J/mol
-    V1 = 2.5;        % Activation volume for polaron conduction, cc/mol
-    V2 = -0.6;        % Activation volume for proton conduction, cc/mol
+    r2 = 1.13;       % Empirical constant for proton conduction
+    E1 = 102000;     % Activation energy for polaron conduction, J/mol
+    E2 = 71000;      % Activation energy for proton conduction, J/mol
+    V1 = 0.0;        % Activation volume for polaron conduction, cc/mol
+    V2 = 0.0;        % Activation volume for proton conduction, cc/mol
 
     % Check if temperature is greater than zero
     if T <= 0
@@ -71,8 +70,8 @@ function sigma = Karato_garnet_conductivity(T, Cw, P)
     end
 
     % Calculate conductivities
-    sigma_polaron = A1 * Cw.^r1 .* exp(-(E1 + P * V1) / (R * T));
-    sigma_proton =  A2 * Cw.^r2 .* exp(-(E2 + P * V2) / (R * T));
+    sigma_polaron = A1 * Cw^r1 * exp(-(E1 + P * V1) / (R * T));
+    sigma_proton =  A2 * Cw^r2 * exp(-(E2 + P * V2) / (R * T));
 
     % Sum the conductivities
     sigma = sigma_polaron + sigma_proton;
