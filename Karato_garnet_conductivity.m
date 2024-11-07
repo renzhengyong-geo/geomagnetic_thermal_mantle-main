@@ -65,9 +65,9 @@ function sigma = Karato_garnet_conductivity(T, Cw, P)
     % Convert pressure from Pa to J/cc
     P = 1e-6 * P;  % 1 Pa = 1 J/m³ = 1e-6 J/cc
 
-    % Check if water content is within the range of 0 to 1
-    if Cw < 0 || Cw > 1
-        error('Water content must be in the range of 0 to 1.');
+    % Check if water content is within the range of 0 to 100
+    if Cw < 0 || Cw > 100
+        error('Water content must be in the range of 0 to 100.');
     end
 
     % Calculate conductivities

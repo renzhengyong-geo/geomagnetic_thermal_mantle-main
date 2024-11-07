@@ -1,13 +1,13 @@
 --------------------------------------------------------------------------------
      Timing                    min.         % of total
 
-  Static G calculation       0.86767E-04         2.8
-  Dynamic G calculation      0.44753E-03        14.5
-  Static LP                  0.17567E-04         0.6
-  Dynamic LP                 0.46087E-03        14.9
-  Successive QP              0.96385E-03        31.2
-  Total of above             0.19766E-02        64.0
-  Total elapsed time         0.30862E-02       100.0
+  Static G calculation       0.83900E-04         2.7
+  Dynamic G calculation      0.44922E-03        14.7
+  Static LP                  0.17283E-04         0.6
+  Dynamic LP                 0.45942E-03        15.0
+  Successive QP              0.96103E-03        31.5
+  Total of above             0.19709E-02        64.5
+  Total elapsed time         0.30554E-02       100.0
 --------------------------------------------------------------------------------
   Other statistics:
 
