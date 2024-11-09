@@ -58,10 +58,41 @@ print(gcf, 'Conductivity_vs_WaterContent', '-dpng', '-r300'); % 300 DPI for publ
 close all; % Close any open figures at the start
 
 
-% Pyrolite mantle model which is a term used to characterize a model composition of the Earth's mantle. 
-% 1) A pyrolitic Upper Mantle is mainly composed of olivine (~60 volume percent (vol%)), clinopyroxene, orthopyroxene, and garnet.
-% [7] Pyroxene would gradually dissolved into garnet and form majoritic garnet.[10]
+% Pyrolite mantle model which is a term used to characterize a model 
+% composition of the Earth's mantle. 
+% 1) A pyrolitic Upper Mantle is mainly composed of olivine
+% (~60 volume percent (vol%)), clinopyroxene, orthopyroxene, and garnet.
+% [7] Pyroxene would gradually dissolved into garnet and form 
+% majoritic garnet.[10]
+% 2) A pyrolitic Mantle Transition Zone is mainly composed of 
+% 60 vol% olivine-polymorphs (wadsleyite, ringwoodite) and ~40 
+% vol% majoritic garnet. The top and bottom boundary of the Mantle Transition 
+% zone are mainly marked by olivine-wadsleyite transition and 
+% ringwoodite-perovskite transition, respectively.
+% 3) A pyrolitic Lower Mantle is mainly composed of magnesium perovskite 
+% (~80 vol%), ferroperclase (~13 vol%), and calcium perovskite (~7%). 
+% In addition, post-perovskite may present at the bottom of the Lower Mantle.
 
-2) A pyrolitic Mantle Transition Zone is mainly composed of 60 vol% olivine-polymorphs (wadsleyite, ringwoodite) and ~40 vol% majoritic garnet. The top and bottom boundary of the Mantle Transition zone are mainly marked by olivine-wadsleyite transition and ringwoodite-perovskite transition, respectively.
+% Generate the Ito_Katsura_geothermail_EPS_1989.
+% Define the file path
+file_path = 'Ito_Katsura_geothermal_1989.dat'; 
+% Open the file and read the data, skipping the first row
+data = readmatrix(file_path, 'FileType', 'text', 'NumHeaderLines', 1);
+depth = data(:, 1);       % First column: depth (km)
+temperature = data(:, 2); % Second column: temperature (K)
+n_TP=length(depth);
+pressure = zeros(n_TP, 1);
 
-3) A pyrolitic Lower Mantle is mainly composed of magnesium perovskite (~80 vol%), ferroperclase (~13 vol%), and calcium perovskite (~7%). In addition, post-perovskite may present at the bottom of the Lower Mantle.
+for i=1:n_TP
+    pressure(i)=find_pressure_for_depth(depth(i))*10000; %Gpa->Bar,1Gpa=10000Bar
+end
+
+% Combine depth and temperature into a single matrix
+output_data = [pressure, temperature];
+output_file = 'Ito_Katsura_geothermal_1989_pressure_temperature.dat';
+writematrix(output_data, output_file, 'Delimiter', 'tab');
+
+
+
+
+
