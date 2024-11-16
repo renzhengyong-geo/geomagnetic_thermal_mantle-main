@@ -6,7 +6,6 @@
 #include <iomanip>
 #include <algorithm>
 #include <gsl/gsl_roots.h>
-#include <gsl/gsl_errno.h>
 
 // Coefficients for the Pitzer and Sterner EOS
 std::vector<std::vector<double>> coeff = {
@@ -106,9 +105,6 @@ double PSfugacity(double pressure_GPa, double temperature_C) {
     const double temperature = temperature_C + 273.15;
     const double R = 8314510.0; // Pa*cc/(K*mol)
 
-    // Convert pressure from GPa to bars
-    const double pressure_bar = pressure_GPa * 1e4; // 1 GPa = 10,000 bars
-
     // Calculate density
     const double den = 1.0 / volume; // mol/cc
 
@@ -121,25 +117,20 @@ double PSfugacity(double pressure_GPa, double temperature_C) {
     }
 
     // Fugacity calculation
-    // Adjust for correct unit handling: pressure in bars, R in Pa*cc/(K*mol)
-    const double fug = exp(
-        log(den) + c[0] * den +
-        (1 / (c[1] + c[2] * den + c[3] * pow(den, 2) + c[4] * pow(den, 3) + c[5] * pow(den, 4)) - 1 / c[1]) -
-        c[6] / c[7] * (exp(-c[7] * den) - 1) -
-        c[8] / c[9] * (exp(-c[9] * den) - 1) +
-        (pressure_bar * 1e5) / (den * R * temperature) + // Convert pressure from bars to Pascals for consistency with R
-        log(R * temperature) - 1
-    ) / 1e5; // Convert from Pa to bar
+    const double fug = exp(log(den) + c[0] * den +
+                     (1 / (c[1] + c[2] * den + c[3] * pow(den, 2) + c[4] * pow(den, 3) + c[5] * pow(den, 4)) - 1 / c[1]) -
+                     c[6] / c[7] * (exp(-c[7] * den) - 1) -
+                     c[8] / c[9] * (exp(-c[9] * den) - 1) +
+                     pressure_GPa * 1e4 * 1e5 / (den * R * temperature) +
+                     log(R * temperature) - 1) / 1e5; // Convert to GPa
 
-    // Convert fugacity from bars to GPa (since output should be in GPa)
-    return fug * 1e-4; // 1 bar = 1e-4 GPa
+    return fug;
 }
-
 
 int main() {
     try {
-        double pressure_GPa = 8; // Pressure in GPa
-        double temperature_C = 3000; // Temperature in Celsius
+        double pressure_GPa = 0.5; // Pressure in GPa
+        double temperature_C = 300; // Temperature in Celsius
 
         double volume = PSvolume(pressure_GPa, temperature_C);
         double fugacity = PSfugacity(pressure_GPa, temperature_C);

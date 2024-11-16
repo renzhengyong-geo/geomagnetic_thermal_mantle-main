@@ -18,8 +18,8 @@ coeff(10, :) = [0, 0, 0.92093375e5, 0.12246777e3, 0, 0];
 % Gas constant
 R = 8314510; % Pa*cc/(K*mol)
 
-pressure_GPa = 0.5; % Input Pressure in GPa
-temperature_C = 300; % Input Temperature in °C
+pressure_GPa = 10; % Input Pressure in GPa
+temperature_C = 10000; % Input Temperature in °C
 
 try
     % Calculate molar volume and fugacity

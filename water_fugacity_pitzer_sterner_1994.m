@@ -1,65 +1,33 @@
-% Plot water fugacity vs. pressure for four different temperatures
+% Main function to dispatch other sub-functions
+function output = water_fugacity_pitzer_sterner_1994(function_name, varargin)
+    % Define coefficients and gas constant that are used in all functions
+    coeff = zeros(10, 6);
+    coeff(1, :) = [0, 0, 0.24657688e6, 0.51359951e2, 0, 0];
+    coeff(2, :) = [0, 0, 0.58638965e0, -0.28646939e-2, 0.31375577e-4, 0];
+    coeff(3, :) = [0, 0, -0.62783840e1, 0.14791599e-1, 0.35779579e-3, 0.15432925e-7];
+    coeff(4, :) = [0, 0, 0, -0.42719875e0, -0.16325155e-4, 0];
+    coeff(5, :) = [0, 0, 0.56654978e4, -0.16580167e2, 0.76560762e-1, 0];
+    coeff(6, :) = [0, 0, 0, 0.10917883e0, 0, 0];
+    coeff(7, :) = [0.38878656e13, -0.13494878e9, 0.30916564e6, 0.75591105e1, 0, 0];
+    coeff(8, :) = [0, 0, -0.65537898e5, 0.18810675e3, 0, 0];
+    coeff(9, :) = [-0.14182435e14, 0.18165390e9, -0.19769068e6, -0.23530318e2, 0, 0];
+    coeff(10, :) = [0, 0, 0.92093375e5, 0.12246777e3, 0, 0];
 
-% Define constants and coefficients
-coeff = zeros(10, 6);
-coeff(1, :) = [0, 0, 0.24657688e6, 0.51359951e2, 0, 0];
-coeff(2, :) = [0, 0, 0.58638965e0, -0.28646939e-2, 0.31375577e-4, 0];
-coeff(3, :) = [0, 0, -0.62783840e1, 0.14791599e-1, 0.35779579e-3, 0.15432925e-7];
-coeff(4, :) = [0, 0, 0, -0.42719875e0, -0.16325155e-4, 0];
-coeff(5, :) = [0, 0, 0.56654978e4, -0.16580167e2, 0.76560762e-1, 0];
-coeff(6, :) = [0, 0, 0, 0.10917883e0, 0, 0];
-coeff(7, :) = [0.38878656e13, -0.13494878e9, 0.30916564e6, 0.75591105e1, 0, 0];
-coeff(8, :) = [0, 0, -0.65537898e5, 0.18810675e3, 0, 0];
-coeff(9, :) = [-0.14182435e14, 0.18165390e9, -0.19769068e6, -0.23530318e2, 0, 0];
-coeff(10, :) = [0, 0, 0.92093375e5, 0.12246777e3, 0, 0];
-
-% Gas constant
-R = 8314510; % Pa*cc/(K*mol)
-
-% Temperatures in Kelvin to be considered
-temperatures = [1273, 1473, 1673, 1873]; % Kelvin
-
-% Pressures to evaluate (in GPa)
-pressure_range = linspace(0.1, 15, 50); % Pressure from 0.1 GPa to 5 GPa
-
-% Initialize figure
-figure;
-hold on;
-
-% Colors for the plot lines
-colors = ['b', 'r', 'g', 'm'];
-
-% Loop through each temperature and calculate fugacity for each pressure
-for t = 1:length(temperatures)
-    temperature_K = temperatures(t);
-    fugacity_values = zeros(size(pressure_range));
+    % Gas constant
+    R = 8314510; % Pa*cc/(K*mol)
     
-    for p = 1:length(pressure_range)
-        pressure_GPa = pressure_range(p);
-        fugacity_values(p) = PSfugacity(pressure_GPa, temperature_K - 273.15, coeff, R);
+    % Dispatch to appropriate function
+    switch function_name
+        case 'PSeos'
+            output = PSeos(varargin{:}, coeff, R);
+        case 'PSvolume'
+            output = PSvolume(varargin{:}, coeff, R);
+        case 'PSfugacity'
+            output = PSfugacity(varargin{:}, coeff, R);
+        otherwise
+            error('Invalid function name specified.');
     end
-    
-    % Plot fugacity vs. pressure
-    plot(pressure_range, fugacity_values, 'Color', colors(t), 'LineWidth', 1.5, ...
-         'DisplayName', sprintf('T = %d K', temperature_K));
 end
-
-% Set y-axis to logarithmic scale
-set(gca, 'YScale', 'log');
-% Set y-axis limits to [10^-5, 10^10]
-ylim([1e-5, 1e10]);
-
-% Labels and legend
-xlabel('Pressure (GPa)', 'FontSize', 12);
-ylabel('Fugacity (GPa)', 'FontSize', 12);
-title('Water Fugacity vs Pressure for Different Temperatures', 'FontSize', 14);
-legend('show', 'Location', 'NorthWest');
-grid on;
-box on; 
-hold off;
-
-% Save the figure
-saveas(gcf, 'water_fugacity_vs_pressure.png'); % Saves the figure as a PNG file
 
 % Function to calculate pressure using EOS
 function pressure = PSeos(volume, temperature_C, targetP_GPa, coeff, R)
@@ -70,7 +38,7 @@ function pressure = PSeos(volume, temperature_C, targetP_GPa, coeff, R)
 
     % Calculate density
     den = 1 ./ volume; % mol/cc
-    
+
     % Calculate temperature-dependent coefficients
     c = zeros(1, 10);
     for i = 1:10
@@ -93,7 +61,7 @@ end
 % Function to calculate molar volume for a given pressure and temperature
 function volume = PSvolume(pressure_GPa, temperature_C, coeff, R)
     % Use fminsearch to find the molar volume that gives the target pressure
-    options = optimset('Display', 'off', 'TolX', 1e-8);
+    options = optimset('Display', 'off', 'TolX', 1e-10);
     % Starting guess for volume, optimized with bounds for realistic values
     initial_guess = 10; % Initial guess for molar volume in cc/mol
     % Objective function that finds the root of the pressure difference
