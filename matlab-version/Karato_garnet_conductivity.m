@@ -43,14 +43,14 @@
 function sigma = Karato_garnet_conductivity(T, Cw, P)
     % Constants
     R = 8.314;       % Gas constant, J/(K⋅mol)
-    A1 = 10^(2.1);   % Pre-exponential factor for polaron conduction, S/m
-    A2 = 10^(2.7);   % Pre-exponential factor for proton conduction, S/m
+    A1 = 1036*(1-0.044*P*1e-9);   % Pre-exponential factor for polaron conduction, S/m
+    A2 = 1950;   % Pre-exponential factor for proton conduction, S/m
     r1 = 0;          % Empirical constant for polaron conduction
     r2 = 0.63;       % Empirical constant for proton conduction
     E1 = 128000;     % Activation energy for polaron conduction, J/mol
     E2 = 70000;      % Activation energy for proton conduction, J/mol
-    V1 = 2.5;        % Activation volume for polaron conduction, cc/mol
-    V2 = -0.6;        % Activation volume for proton conduction, cc/mol
+    V1 = 2.50;        % Activation volume for polaron conduction, cc/mol
+    V2 = -0.57;       % Activation volume for proton conduction, cc/mol
 
     % Check if temperature is greater than zero
     if T <= 0
@@ -65,9 +65,9 @@ function sigma = Karato_garnet_conductivity(T, Cw, P)
     % Convert pressure from Pa to J/cc
     P = 1e-6 * P;  % 1 Pa = 1 J/m³ = 1e-6 J/cc
 
-    % Check if water content is within the range of 0 to 100
+    % Check if water content is within the range of 0 to 100 (%)
     if Cw < 0 || Cw > 100
-        error('Water content must be in the range of 0 to 100.');
+        error('Water content must be in the range of 0 to 100 in unit of wt%.');
     end
 
     % Calculate conductivities

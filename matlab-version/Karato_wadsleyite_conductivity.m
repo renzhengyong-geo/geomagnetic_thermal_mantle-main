@@ -20,9 +20,12 @@
 %
 % REFERENCES:
 % Values of A, r, E, V are from:
-%   Karato, S. I. (2011). Water distribution across the mantle transition zone
+%   1. Karato, S. I. (2011). Water distribution across the mantle transition zone
 %   and its implications for global material circulation. Earth and Planetary
 %   Science Letters, 301(3–4), 413–423. https://doi.org/10.1016/j.epsl.2010.11.038
+%   2. Dai, L., & Karato, S. ichiro. (2009). Electrical conductivity of wadsleyite 
+%   at high temperatures and high pressures. Earth and Planetary Science Letters, 
+%   287(1–2), 277–283. https://doi.org/10.1016/j.epsl.2009.08.012
 %
 % UNITS:
 %   - temperature: Kelvin (K); 0 K is equivalent to -273.15°C.
@@ -42,7 +45,7 @@ function sigma = Karato_wadsleyite_conductivity(T, Cw, P)
     % Constants
     R = 8.314;       % Gas constant, J/(K⋅mol)
     A1 = 10^(2.1);   % Pre-exponential factor for polaron conduction, S/m
-    A2 = 10^(2.1);   % Pre-exponential factor for proton conduction, S/m
+    A2 = 10^(2.5);   % Pre-exponential factor for proton conduction, S/m
     r1 = 0;          % Empirical constant for polaron conduction
     r2 = 0.72;       % Empirical constant for proton conduction
     E1 = 147000;     % Activation energy for polaron conduction, J/mol
@@ -74,4 +77,5 @@ function sigma = Karato_wadsleyite_conductivity(T, Cw, P)
 
     % Sum the conductivities
     sigma = sigma_polaron + sigma_proton;
+
 end

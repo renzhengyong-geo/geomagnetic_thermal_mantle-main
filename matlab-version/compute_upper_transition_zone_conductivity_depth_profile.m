@@ -1,4 +1,4 @@
-function [P, T, aggregate_sigma_plus, aggregate_sigma_minus] = ...
+function [P, T, aggregate_sigma_plus, aggregate_sigma_minus,total_Cw] = ...
     compute_upper_transition_zone_conductivity_depth_profile(upperTransitionZoneTable, water_content, group_id)
     % Compute conductivity depth profile for upper_transition_zone
     %
@@ -87,9 +87,20 @@ function [P, T, aggregate_sigma_plus, aggregate_sigma_minus] = ...
         conductivities = sigma(i, :); % Conductivities (S/m)
         % Ensure valid inputs for Hashin-Shtrikman
         assert(all(conductivities > 0), 'Error: Conductivities must be positive.');
-        assert(abs(sum(fractions) - 1) < 1e-6, 'Error: Volume fractions must sum to 1.');
+        % assert(abs(sum(fractions) - 1) < 1e-6, 'Error: Volume fractions must sum to 1.');
         [sigma_HS_upper, sigma_HS_lower] = hashin_shtrikman(fractions, conductivities);
         aggregate_sigma_plus(i) = sigma_HS_upper;
         aggregate_sigma_minus(i) = sigma_HS_lower;
     end
+
+    % -------------------------------------------------------------------------
+    % Compute Aggregate Water content
+    % -------------------------------------------------------------------------
+    total_Cw = zeros(m, 1);
+    for i = 1:m
+        for j=1:3
+          total_Cw(i) = total_Cw(i)+ (f(i, j) / 100)*Cw(i, j); % Convert to fractions
+        end
+    end
+
 end

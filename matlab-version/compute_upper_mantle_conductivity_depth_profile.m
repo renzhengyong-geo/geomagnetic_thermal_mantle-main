@@ -1,4 +1,4 @@
-function [P, T, aggregate_sigma_plus, aggregate_sigma_minus] = compute_upper_mantle_conductivity_depth_profile(upperMantleTable, ...
+function [P, T, aggregate_sigma_plus, aggregate_sigma_minus, total_Cw] = compute_upper_mantle_conductivity_depth_profile(upperMantleTable, ...
     water_content, group_id)
     % Compute conductivity depth profile for the upper mantle.
     %
@@ -86,4 +86,15 @@ function [P, T, aggregate_sigma_plus, aggregate_sigma_minus] = compute_upper_man
         aggregate_sigma_plus(i) = sigma_HS_upper;
         aggregate_sigma_minus(i) = sigma_HS_lower;
     end
+
+    % -------------------------------------------------------------------------
+    % Compute Aggregate Water content
+    % -------------------------------------------------------------------------
+    total_Cw = zeros(m, 1);
+    for i = 1:m
+        for j=1:4
+          total_Cw(i) = total_Cw(i)+ (f(i, j) / 100)*Cw(i, j); % Convert to fractions
+        end
+    end
+
 end

@@ -1,4 +1,4 @@
-function [P, T, aggregate_sigma_plus, aggregate_sigma_minus] = ...
+function [P, T, aggregate_sigma_plus, aggregate_sigma_minus,total_Cw] = ...
     compute_lower_transition_zone_conductivity_depth_profile(lowerTransitionZoneTable, water_content, group_id)
     % Compute conductivity depth profile for the lower transition zone.
     %
@@ -38,9 +38,6 @@ function [P, T, aggregate_sigma_plus, aggregate_sigma_minus] = ...
 
     % Validate volume fractions
     assert(all(sum(f, 2) > 0), 'Error: Volume fractions must sum to a positive value for each row.');
-
-    % Normalize volume fractions
-    f = f ./ sum(f, 2);
 
     % -------------------------------------------------------------------------
     % Calculate Water Partitioning
@@ -85,10 +82,20 @@ function [P, T, aggregate_sigma_plus, aggregate_sigma_minus] = ...
     aggregate_sigma_minus = zeros(m, 1);
 
     for i = 1:m
-        fractions = f(i, :); % Volume fractions
+        fractions = f(i, :) / 100; % Convert to fractions
         conductivities = sigma(i, :); % Conductivities (S/m)
         [sigma_HS_upper, sigma_HS_lower] = hashin_shtrikman(fractions, conductivities);
         aggregate_sigma_plus(i) = sigma_HS_upper;
         aggregate_sigma_minus(i) = sigma_HS_lower;
+    end
+
+    % -------------------------------------------------------------------------
+    % Compute Aggregate Water content
+    % -------------------------------------------------------------------------
+    total_Cw = zeros(m, 1);
+    for i = 1:m
+        for j=1:2
+          total_Cw(i) = total_Cw(i)+ (f(i, j) / 100)*Cw(i, j); % Convert to fractions
+        end
     end
 end

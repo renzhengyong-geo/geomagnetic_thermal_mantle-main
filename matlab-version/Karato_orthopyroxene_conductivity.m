@@ -23,6 +23,10 @@
 %   Karato, S. I. (2011). Water distribution across the mantle transition zone
 %   and its implications for global material circulation. Earth and Planetary
 %   Science Letters, 301(3–4), 413–423. https://doi.org/10.1016/j.epsl.2010.11.038
+%   Dai, L., & Karato, S. ichiro. (2009). Electrical conductivity of orthopyroxene: 
+%   Implications for the water content of the asthenosphere. Proceedings of the 
+%   Japan Academy Series B: Physical and Biological Sciences, 85(10), 
+%   466–475. https://doi.org/10.2183/pjab.85.466
 %
 % UNITS:
 %   - temperature: Kelvin (K); 0 K is equivalent to -273.15°C.
@@ -41,7 +45,7 @@
 function sigma = Karato_orthopyroxene_conductivity(T, Cw, P)
     % Constants
     R = 8.314;       % Gas constant, J/(K⋅mol)
-    A1 = 10^(2.7);   % Pre-exponential factor for polaron conduction, S/m
+    A1 = 10^(2.4);   % Pre-exponential factor for polaron conduction, S/m
     A2 = 10^(2.6);   % Pre-exponential factor for proton conduction, S/m
     r1 = 0;          % Empirical constant for polaron conduction
     r2 = 0.62;       % Empirical constant for proton conduction
@@ -63,9 +67,9 @@ function sigma = Karato_orthopyroxene_conductivity(T, Cw, P)
     % Convert pressure from Pa to J/cc
     P = 1e-6 * P;  % 1 Pa = 1 J/m³ = 1e-6 J/cc
 
-    % Check if water content is within the range of 0 to 100
+    % Check if water content is within the range of 0 to 100%
     if Cw < 0 || Cw > 100
-        error('Water content must be in the range of 0 to 100.');
+        error('Water content must be in the range of 0 to 100%.');
     end
 
     % Calculate conductivities

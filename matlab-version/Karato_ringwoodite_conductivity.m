@@ -20,9 +20,12 @@
 %
 % REFERENCES:
 % Values of A, r, E, V are from:
-%   Karato, S. I. (2011). Water distribution across the mantle transition zone
+%   1. Karato, S. I. (2011). Water distribution across the mantle transition zone
 %   and its implications for global material circulation. Earth and Planetary
 %   Science Letters, 301(3–4), 413–423. https://doi.org/10.1016/j.epsl.2010.11.038
+%   2. Huang, X., Xu, Y., & Karato, S. (2005). Water content in the transition zone 
+%     from electrical conductivity of wadsleyite and ringwoodite. Nature, 
+%     434(7034), 746–749. https://doi.org/10.1038/nature03426
 %
 % UNITS:
 %   - temperature: Kelvin (K); 0 K is equivalent to -273.15°C.
@@ -42,7 +45,7 @@ function sigma = Karato_ringwoodite_conductivity(T, Cw, P)
     % Constants
     R = 8.314;       % Gas constant, J/(K⋅mol)
     A1 = 0.0;        % Pre-exponential factor for polaron conduction, S/m
-    A2 = 10^(3.6);   % Pre-exponential factor for proton conduction, S/m
+    A2 = 10^(3.61);  % Pre-exponential factor for proton conduction, S/m
     r1 = 0;          % Empirical constant for polaron conduction
     r2 = 0.69;       % Empirical constant for proton conduction
     E1 = 0;          % Activation energy for polaron conduction, J/mol
