@@ -1,7 +1,7 @@
 %Xu Y, McCammon C, Poe B T. The effect of alumina on the electrical conductivity of silicate perovskite[J]. 
 %Science, 1998, 282(5390): 922-924.
 
-function sigma = Yoshino_Perovskite_conductivity(temperature, water_content,pressure)
+function sigma = Yoshino_perovskite_conductivity(temperature, water_content,pressure)
     % Constants
     % This function calculates the electrical conductivity based on the
     % provided temperature (T), water content (Cw), and material constants.

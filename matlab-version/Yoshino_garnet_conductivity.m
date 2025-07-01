@@ -43,8 +43,8 @@ function sigma = Yoshino_garnet_conductivity(temperature, water_content,pressure
     end
 
     % Check if water_content is within the range of 0 to 1
-    if any(water_content < 0) || any(water_content > 1)
-        error('Water content must be in the range of 0 to 1.');
+    if any(water_content < 0) || any(water_content > 100)
+        error('Water content must be in the range of 0 to 100.');
     end
 
     % Sum the conductivities

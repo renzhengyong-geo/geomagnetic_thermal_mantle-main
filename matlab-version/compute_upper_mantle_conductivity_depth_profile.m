@@ -19,7 +19,7 @@ function [P, T, aggregate_sigma_plus, aggregate_sigma_minus, total_Cw] = compute
     m = size(upperMantleTable, 1); % Number of rows
     assert(size(upperMantleTable, 2) == 6, 'Error: Columns in upperMantleTable must be 6 (P, T, O, Cpx, Opx, Gt).');
     assert(m == length(water_content), 'Error: Rows in upperMantleTable must match length of water_content.');
-    assert(ismember(lower(group_id), {'karato', 'yashino'}), 'Error: group_id must be "karato" or "yashino".');
+    assert(ismember(lower(group_id), {'karato', 'yoshino'}), 'Error: group_id must be "karato" or "yoshino".');
 
     % -------------------------------------------------------------------------
     % Extract Data
@@ -63,11 +63,12 @@ function [P, T, aggregate_sigma_plus, aggregate_sigma_minus, total_Cw] = compute
                 sigma(i, 2) = Karato_clinopyroxene_conductivity(t, Cw(i, 2), p);
                 sigma(i, 3) = Karato_orthopyroxene_conductivity(t, Cw(i, 3), p);
                 sigma(i, 4) = Karato_garnet_conductivity(t, Cw(i, 4), p);
-            case 'yashino'
-                % sigma(i, 1) = Yashino_olivine_conductivity(t, Cw(i, 1), p);
-                % sigma(i, 2) = Yashino_clinopyroxene_conductivity(t, Cw(i, 2), p);
-                % sigma(i, 3) = Yashino_orthopyroxene_conductivity(t, Cw(i, 3), p);
-                % sigma(i, 4) = Yashino_garnet_conductivity(t, Cw(i, 4), p);
+            case 'yoshino'
+                sigma(i, 1) = Yoshino_olivine_conductivity(t, Cw(i, 1), p, 1.0);
+                Cw(i,2)
+                sigma(i, 2) = Yoshino_clinopyroxene_conductivity(t, Cw(i, 2), p);
+                sigma(i, 3) = Yoshino_orthopyroxene_conductivity(t, Cw(i, 3), p);
+                sigma(i, 4) = Yoshino_garnet_conductivity(t, Cw(i, 4), p);
             otherwise
                 error('Unexpected group_id value: %s', group_id);
         end

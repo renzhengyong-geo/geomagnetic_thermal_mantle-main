@@ -23,7 +23,7 @@ function [P, T, aggregate_sigma_plus, aggregate_sigma_minus,total_Cw] = ...
     missingColumns = setdiff(requiredColumns, lowerTransitionZoneTable.Properties.VariableNames);
     assert(isempty(missingColumns), 'Error: Missing required columns: %s.', strjoin(missingColumns, ', '));
     assert(m == length(water_content), 'Error: Rows in lowerTransitionZoneTable must match length of water_content.');
-    assert(ismember(lower(group_id), {'karato', 'yashino'}), 'Error: group_id must be "karato" or "yashino".');
+    assert(ismember(lower(group_id), {'karato', 'yoshino'}), 'Error: group_id must be "karato" or "yashino".');
 
     % -------------------------------------------------------------------------
     % Extract Data
@@ -64,9 +64,9 @@ function [P, T, aggregate_sigma_plus, aggregate_sigma_minus,total_Cw] = ...
             case 'karato'
                 sigma(i, 1) = Karato_ringwoodite_conductivity(t, Cw(i, 1), p);
                 sigma(i, 2) = Karato_garnet_conductivity(t, Cw(i, 2), p);
-            case 'yashino'
-                sigma(i, 1) = Yashino_ringwoodite_conductivity(t, Cw(i, 1), p);
-                sigma(i, 2) = Yashino_garnet_conductivity(t, Cw(i, 2), p);
+            case 'yoshino'
+                sigma(i, 1) = Yoshino_ringwoodite_conductivity(t, Cw(i, 1), p, 1.0);
+                sigma(i, 2) = Yoshino_garnet_conductivity(t, Cw(i, 2), p);
             otherwise
                 error('Unexpected group_id value: %s', group_id);
         end

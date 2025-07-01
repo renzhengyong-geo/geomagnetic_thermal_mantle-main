@@ -65,7 +65,7 @@ function sigma = Karato_clinopyroxene_conductivity(T, Cw, P)
     P = 1e-6 * P;  % 1 Pa = 1 J/m³ = 1e-6 J/cc
 
     % Check if water content is within the range of 0 to 100
-    if Cw < 0 || Cw > 100
+    if Cw < 0 || Cw > 200
         error('Water content must be in the range of 0 to 100.');
     end
 

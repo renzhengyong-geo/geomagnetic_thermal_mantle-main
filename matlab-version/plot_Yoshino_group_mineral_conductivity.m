@@ -204,3 +204,429 @@ set(gca, 'FontSize', 14); % Increase font size for readability
 set(gcf, 'PaperPositionMode', 'auto');
 print('Yosino_ringwoodite_Conductivity_vs_WaterContent', '-dpng', '-r300');
 
+% Plot the condudviity-depth profile using the average mantle geotherm
+% (Katsura et al.2010, PEPI）
+% Clear workspace and initialize
+clear;
+clc;
+% % Define the filename
+% filename = 'geothermal_katsura_PEPI_2010.csv'; % Replace with your file name
+% % Read the CSV file, skipping the first row
+% opts = detectImportOptions(filename);  % Automatically detect the file structure
+% opts.DataLines = [2, Inf];  % Start reading from the second row
+% data = readtable(filename, opts);  % Read the table
+% % Extract depth and temperature columns
+% depth = data.Depth;  % Adjust if your column names are different
+% temperature = data.T;  % Adjust if your column names are different
+% pressure=zeros(length(depth),1); 
+% for i=1:length(depth)
+%     pressure(i)=find_pressure_for_depth(depth(i)); %% input in unit of km
+% end
+% pressure=pressure*1e4; %%GPa to Bar
+% disp([pressure', temperature', depth]);
+% 
+% Input Parameters
+group_id = "YoSHINO";
+fileName = "../perple_x/Yoshino_AREPS_2013_pyrolite.tab"; % for fig 7
+
+% Perform Calculations
+[columnNames, dataMatrix, ~] = read_tab_format_without_header(fileName);
+[upperMantleTable, upperTransitionZoneTable, lowerTransitionZoneTable, ~] = divideDataByDominantMineral(dataMatrix, columnNames);
+% Compute conductivity-depth profile in the upper mantle
+m = size(upperMantleTable, 1); % Number of rows
+water_content = ones(m, 1);    % Water content (wt%)
+[~, ~, um_sigma_plus_1, um_sigma_minus_1, um_Cw1] = compute_upper_mantle_conductivity_depth_profile(upperMantleTable, water_content, group_id);
+[~, ~, um_sigma_plus_01, um_sigma_minus_01, um_Cw01] = compute_upper_mantle_conductivity_depth_profile(upperMantleTable, water_content * 0.5, group_id);
+[~, ~, um_sigma_plus_001, um_sigma_minus_001, um_Cw001] = compute_upper_mantle_conductivity_depth_profile(upperMantleTable, water_content * 0.1, group_id);
+[um_P, um_T, um_sigma_plus_0001, um_sigma_minus_0001,um_Cw0001] = compute_upper_mantle_conductivity_depth_profile(upperMantleTable, water_content * 1e-5, group_id);
+% Compute conductivity-depth profile in the transition zone
+m = size(upperTransitionZoneTable, 1); % Number of rows
+water_content = ones(m, 1);    % Water content (wt%)
+[~, ~, ut_sigma_plus_1, ut_sigma_minus_1, ut_Cw1] = compute_upper_transition_zone_conductivity_depth_profile(upperTransitionZoneTable, water_content, group_id);
+[~, ~, ut_sigma_plus_01, ut_sigma_minus_01,ut_Cw01] = compute_upper_transition_zone_conductivity_depth_profile(upperTransitionZoneTable, water_content * 0.5, group_id);
+[~, ~, ut_sigma_plus_001, ut_sigma_minus_001,ut_Cw001] = compute_upper_transition_zone_conductivity_depth_profile(upperTransitionZoneTable, water_content * 0.1, group_id);
+[ut_P, ut_T, ut_sigma_plus_0001, ut_sigma_minus_0001, ut_Cw0001] = compute_upper_transition_zone_conductivity_depth_profile(upperTransitionZoneTable, water_content * 1e-5, group_id);
+m = size(lowerTransitionZoneTable, 1); % Number of rows
+water_content = ones(m, 1);    % Water content (wt%)
+[~, ~, lt_sigma_plus_1, lt_sigma_minus_1, lt_Cw1] = compute_lower_transition_zone_conductivity_depth_profile(lowerTransitionZoneTable, water_content, group_id);
+[~, ~, lt_sigma_plus_01, lt_sigma_minus_01,lt_Cw01] = compute_lower_transition_zone_conductivity_depth_profile(lowerTransitionZoneTable, water_content * 0.5, group_id);
+[~, ~, lt_sigma_plus_001, lt_sigma_minus_001,lt_Cw001] = compute_lower_transition_zone_conductivity_depth_profile(lowerTransitionZoneTable, water_content * 0.1, group_id);
+[lt_P, lt_T, lt_sigma_plus_0001, lt_sigma_minus_0001, lt_Cw0001] = compute_lower_transition_zone_conductivity_depth_profile(lowerTransitionZoneTable, water_content * 1e-5, group_id);
+
+% Assemble P, T, and sigma
+P = [um_P; ut_P; lt_P];
+T = [um_T; ut_T; lt_T];
+Cw1=[um_Cw1;ut_Cw1;lt_Cw1];
+Cw01=[um_Cw01;ut_Cw01;lt_Cw01];
+Cw001=[um_Cw001;ut_Cw001;lt_Cw001];
+Cw0001=[um_Cw0001;ut_Cw0001;lt_Cw0001];
+% Display water content arrays for verification
+disp('Cw1 (1.0 wt% water content):');
+disp(Cw1);
+disp('Cw01 (0.5 wt% water content):');
+disp(Cw01);
+disp('Cw001 (0.1 wt% water content):');
+disp(Cw001);
+disp('Cw0001 (0.0 wt% water content):');
+disp(Cw0001);
+
+sigma_plus_1 = [um_sigma_plus_1; ut_sigma_plus_1; lt_sigma_plus_1];
+sigma_plus_01 = [um_sigma_plus_01; ut_sigma_plus_01; lt_sigma_plus_01];
+sigma_plus_001 = [um_sigma_plus_001; ut_sigma_plus_001; lt_sigma_plus_001];
+sigma_plus_0001 = [um_sigma_plus_0001; ut_sigma_plus_0001; lt_sigma_plus_0001];
+sigma_minus_1 = [um_sigma_minus_1; ut_sigma_minus_1; lt_sigma_minus_1];
+sigma_minus_01 = [um_sigma_minus_01; ut_sigma_minus_01; lt_sigma_minus_01];
+sigma_minus_001 = [um_sigma_minus_001; ut_sigma_minus_001; lt_sigma_minus_001];
+sigma_minus_0001 = [um_sigma_minus_0001; ut_sigma_minus_0001; lt_sigma_minus_0001];
+
+y_sigma_plus_1 =sigma_plus_1;
+y_sigma_plus_01=sigma_plus_01;
+y_sigma_plus_001=sigma_plus_001;
+y_sigma_plus_0001=sigma_plus_0001;
+y_sigma_minus_1=sigma_minus_1;
+y_sigma_minus_01=sigma_minus_01;
+y_sigma_minus_001=sigma_minus_001;
+y_sigma_minus_0001=sigma_minus_0001;
+
+
+group_id = "KARATO";
+fileName = "../perple_x/Yoshino_AREPS_2013_pyrolite.tab"; % for fig 7
+
+% Perform Calculations
+[columnNames, dataMatrix, ~] = read_tab_format_without_header(fileName);
+[upperMantleTable, upperTransitionZoneTable, lowerTransitionZoneTable, ~] = divideDataByDominantMineral(dataMatrix, columnNames);
+% Compute conductivity-depth profile in the upper mantle
+m = size(upperMantleTable, 1); % Number of rows
+water_content = ones(m, 1);    % Water content (wt%)
+[~, ~, um_sigma_plus_1, um_sigma_minus_1, um_Cw1] = compute_upper_mantle_conductivity_depth_profile(upperMantleTable, water_content, group_id);
+[~, ~, um_sigma_plus_01, um_sigma_minus_01, um_Cw01] = compute_upper_mantle_conductivity_depth_profile(upperMantleTable, water_content * 0.1, group_id);
+[~, ~, um_sigma_plus_001, um_sigma_minus_001, um_Cw001] = compute_upper_mantle_conductivity_depth_profile(upperMantleTable, water_content * 0.01, group_id);
+[um_P, um_T, um_sigma_plus_0001, um_sigma_minus_0001,um_Cw0001] = compute_upper_mantle_conductivity_depth_profile(upperMantleTable, water_content * 1e-5, group_id);
+% Compute conductivity-depth profile in the transition zone
+m = size(upperTransitionZoneTable, 1); % Number of rows
+water_content = ones(m, 1);    % Water content (wt%)
+[~, ~, ut_sigma_plus_1, ut_sigma_minus_1, ut_Cw1] = compute_upper_transition_zone_conductivity_depth_profile(upperTransitionZoneTable, water_content, group_id);
+[~, ~, ut_sigma_plus_01, ut_sigma_minus_01,ut_Cw01] = compute_upper_transition_zone_conductivity_depth_profile(upperTransitionZoneTable, water_content * 0.1, group_id);
+[~, ~, ut_sigma_plus_001, ut_sigma_minus_001,ut_Cw001] = compute_upper_transition_zone_conductivity_depth_profile(upperTransitionZoneTable, water_content * 0.01, group_id);
+[ut_P, ut_T, ut_sigma_plus_0001, ut_sigma_minus_0001, ut_Cw0001] = compute_upper_transition_zone_conductivity_depth_profile(upperTransitionZoneTable, water_content * 1e-5, group_id);
+m = size(lowerTransitionZoneTable, 1); % Number of rows
+water_content = ones(m, 1);    % Water content (wt%)
+[~, ~, lt_sigma_plus_1, lt_sigma_minus_1, lt_Cw1] = compute_lower_transition_zone_conductivity_depth_profile(lowerTransitionZoneTable, water_content, group_id);
+[~, ~, lt_sigma_plus_01, lt_sigma_minus_01,lt_Cw01] = compute_lower_transition_zone_conductivity_depth_profile(lowerTransitionZoneTable, water_content * 0.1, group_id);
+[~, ~, lt_sigma_plus_001, lt_sigma_minus_001,lt_Cw001] = compute_lower_transition_zone_conductivity_depth_profile(lowerTransitionZoneTable, water_content * 0.01, group_id);
+[lt_P, lt_T, lt_sigma_plus_0001, lt_sigma_minus_0001, lt_Cw0001] = compute_lower_transition_zone_conductivity_depth_profile(lowerTransitionZoneTable, water_content * 1e-5, group_id);
+
+sigma_plus_1 = [um_sigma_plus_1; ut_sigma_plus_1; lt_sigma_plus_1];
+sigma_plus_01 = [um_sigma_plus_01; ut_sigma_plus_01; lt_sigma_plus_01];
+sigma_plus_001 = [um_sigma_plus_001; ut_sigma_plus_001; lt_sigma_plus_001];
+sigma_plus_0001 = [um_sigma_plus_0001; ut_sigma_plus_0001; lt_sigma_plus_0001];
+sigma_minus_1 = [um_sigma_minus_1; ut_sigma_minus_1; lt_sigma_minus_1];
+sigma_minus_01 = [um_sigma_minus_01; ut_sigma_minus_01; lt_sigma_minus_01];
+sigma_minus_001 = [um_sigma_minus_001; ut_sigma_minus_001; lt_sigma_minus_001];
+sigma_minus_0001 = [um_sigma_minus_0001; ut_sigma_minus_0001; lt_sigma_minus_0001];
+
+k_sigma_plus_1 =sigma_plus_1;
+k_sigma_plus_01=sigma_plus_01;
+k_sigma_plus_001=sigma_plus_001;
+k_sigma_plus_0001=sigma_plus_0001;
+k_sigma_minus_1=sigma_minus_1;
+k_sigma_minus_01=sigma_minus_01;
+k_sigma_minus_001=sigma_minus_001;
+k_sigma_minus_0001=sigma_minus_0001;
+
+% Convert Pressure to Depth (km) using a standard loop
+depth = zeros(length(P), 1); % Preallocate for efficiency
+for i = 1:length(P)
+    depth(i) = find_depth_for_pressure(P(i) * 0.0001); % Convert bar to GPa
+end
+
+% Plot Temperature Profile
+figure('Color', 'white', 'Units', 'inches', 'Position', [1, 1, 5, 6]);
+plot(depth, T, '-', 'LineWidth', 2, 'DisplayName', 'Temperature');
+set(gca, 'FontSize', 12, 'LineWidth', 1.5);
+ylim([1400, 2000]);
+xlim([200, 700]);
+xlabel('Depth (km)', 'FontSize', 14, 'FontWeight', 'bold');
+ylabel('T (K)', 'FontSize', 14, 'FontWeight', 'bold');
+title('Temperature Profile', 'FontSize', 16, 'FontWeight', 'bold');
+legend('Location', 'best', 'FontSize', 12);
+box on;
+
+% Plot Upper Bound Conductivities
+figure('Color', 'white', 'Units', 'inches', 'Position', [1, 1, 6, 11]);
+subplot(2,1,1);
+plot(depth, y_sigma_plus_1, '-', 'LineWidth', 2, 'DisplayName', '1 wt%');
+hold on;
+plot(depth, y_sigma_plus_01, '-', 'LineWidth', 2, 'DisplayName', '0.5 wt%');
+plot(depth, y_sigma_plus_001, '-', 'LineWidth', 2, 'DisplayName', '0.1 wt%');
+plot(depth, y_sigma_plus_0001, '-', 'LineWidth', 2, 'DisplayName', '1e-5 wt%');
+hold off;
+set(gca, 'YScale', 'log', 'FontSize', 12, 'LineWidth', 1.5);
+ylim([1e-3, 10]);
+xlim([200, 700]);
+% xlabel('Depth (km)', 'FontSize', 14, 'FontWeight', 'bold');
+ylabel('Conductivity (S/m)', 'FontSize', 14, 'FontWeight', 'bold');
+title('Yoshino model - HS upper bound', 'FontSize', 16, 'FontWeight', 'bold');
+legend('Location', 'best', 'FontSize', 12);
+box on;
+subplot(2,1,2);
+plot(depth, k_sigma_plus_1, '-', 'LineWidth', 2, 'DisplayName', '1 wt%');
+hold on;
+plot(depth, k_sigma_plus_01, '-', 'LineWidth', 2, 'DisplayName', '0.1 wt%');
+plot(depth, k_sigma_plus_001, '-', 'LineWidth', 2, 'DisplayName', '0.01 wt%');
+plot(depth, k_sigma_plus_0001, '-', 'LineWidth', 2, 'DisplayName', '1e-5 wt%');
+hold off;
+set(gca, 'YScale', 'log', 'FontSize', 12, 'LineWidth', 1.5);
+ylim([1e-3, 10]);
+xlim([200, 700]);
+xlabel('Depth (km)', 'FontSize', 14, 'FontWeight', 'bold');
+ylabel('Conductivity (S/m)', 'FontSize', 14, 'FontWeight', 'bold');
+title('Karato model - HS upper bound', 'FontSize', 16, 'FontWeight', 'bold');
+legend('Location', 'best', 'FontSize', 12);
+box on;
+
+% Export the plot to a high-quality PNG file
+exportgraphics(gcf, 'Yoshino_AREPS_2013_fig7_ub.png', 'Resolution', 300);
+
+% Plot Lower Bound Conductivities
+figure('Color', 'white', 'Units', 'inches', 'Position', [1, 1, 6, 11]);
+subplot(2,1,1);
+plot(depth, y_sigma_minus_1, '-', 'LineWidth', 2, 'DisplayName', '1 wt%');
+hold on;
+plot(depth, y_sigma_minus_01, '-', 'LineWidth', 2, 'DisplayName', '0.5 wt%');
+plot(depth, y_sigma_minus_001, '-', 'LineWidth', 2, 'DisplayName', '0.1 wt%');
+plot(depth, y_sigma_minus_0001, '-', 'LineWidth', 2, 'DisplayName', '1e-5 wt%');
+hold off;
+set(gca, 'YScale', 'log', 'FontSize', 12, 'LineWidth', 1.5);
+ylim([1e-3, 10]);
+xlim([200, 700]);
+% xlabel('Depth (km)', 'FontSize', 14, 'FontWeight', 'bold');
+ylabel('Conductivity (S/m)', 'FontSize', 14, 'FontWeight', 'bold');
+title('Lower Bound Conductivity', 'FontSize', 16, 'FontWeight', 'bold');
+legend('Location', 'best', 'FontSize', 12);
+box on;
+subplot(2,1,2);
+plot(depth, k_sigma_minus_1, '-', 'LineWidth', 2, 'DisplayName', '1 wt%');
+hold on;
+plot(depth, k_sigma_minus_01, '-', 'LineWidth', 2, 'DisplayName', '0.1 wt%');
+plot(depth, k_sigma_minus_001, '-', 'LineWidth', 2, 'DisplayName', '0.01 wt%');
+plot(depth, k_sigma_minus_0001, '-', 'LineWidth', 2, 'DisplayName', '1e-5 wt%');
+hold off;
+set(gca, 'YScale', 'log', 'FontSize', 12, 'LineWidth', 1.5);
+ylim([1e-3, 10]);
+xlim([200, 700]);
+xlabel('Depth (km)', 'FontSize', 14, 'FontWeight', 'bold');
+ylabel('Conductivity (S/m)', 'FontSize', 14, 'FontWeight', 'bold');
+title('Lower Bound Conductivity', 'FontSize', 16, 'FontWeight', 'bold');
+legend('Location', 'best', 'FontSize', 12);
+box on;
+% Export the plot to a high-quality PNG file
+exportgraphics(gcf, 'Yoshino_AREPS_2013_fig7_lb.png', 'Resolution', 300);
+
+
+% Plot the condudviity-depth profile using the average mantle geotherm
+% (Katsura et al.2010, PEPI）300k lower
+% Clear workspace and initialize
+clear;
+clc;
+% Input Parameters
+group_id = "YoSHINO";
+fileName = "../perple_x/Yoshino_AREPS_2013_pyrolite_300k_lower.tab"; % for fig 7
+
+% Perform Calculations
+[columnNames, dataMatrix, ~] = read_tab_format_without_header(fileName);
+[upperMantleTable, upperTransitionZoneTable, lowerTransitionZoneTable, ~] = divideDataByDominantMineral(dataMatrix, columnNames);
+% Compute conductivity-depth profile in the upper mantle
+m = size(upperMantleTable, 1); % Number of rows
+water_content = ones(m, 1);    % Water content (wt%)
+[~, ~, um_sigma_plus_1, um_sigma_minus_1, um_Cw1] = compute_upper_mantle_conductivity_depth_profile(upperMantleTable, water_content, group_id);
+[~, ~, um_sigma_plus_01, um_sigma_minus_01, um_Cw01] = compute_upper_mantle_conductivity_depth_profile(upperMantleTable, water_content * 0.5, group_id);
+[~, ~, um_sigma_plus_001, um_sigma_minus_001, um_Cw001] = compute_upper_mantle_conductivity_depth_profile(upperMantleTable, water_content * 0.1, group_id);
+[um_P, um_T, um_sigma_plus_0001, um_sigma_minus_0001,um_Cw0001] = compute_upper_mantle_conductivity_depth_profile(upperMantleTable, water_content * 1e-5, group_id);
+% Compute conductivity-depth profile in the transition zone
+m = size(upperTransitionZoneTable, 1); % Number of rows
+water_content = ones(m, 1);    % Water content (wt%)
+[~, ~, ut_sigma_plus_1, ut_sigma_minus_1, ut_Cw1] = compute_upper_transition_zone_conductivity_depth_profile(upperTransitionZoneTable, water_content, group_id);
+[~, ~, ut_sigma_plus_01, ut_sigma_minus_01,ut_Cw01] = compute_upper_transition_zone_conductivity_depth_profile(upperTransitionZoneTable, water_content * 0.5, group_id);
+[~, ~, ut_sigma_plus_001, ut_sigma_minus_001,ut_Cw001] = compute_upper_transition_zone_conductivity_depth_profile(upperTransitionZoneTable, water_content * 0.1, group_id);
+[ut_P, ut_T, ut_sigma_plus_0001, ut_sigma_minus_0001, ut_Cw0001] = compute_upper_transition_zone_conductivity_depth_profile(upperTransitionZoneTable, water_content * 1e-5, group_id);
+m = size(lowerTransitionZoneTable, 1); % Number of rows
+water_content = ones(m, 1);    % Water content (wt%)
+[~, ~, lt_sigma_plus_1, lt_sigma_minus_1, lt_Cw1] = compute_lower_transition_zone_conductivity_depth_profile(lowerTransitionZoneTable, water_content, group_id);
+[~, ~, lt_sigma_plus_01, lt_sigma_minus_01,lt_Cw01] = compute_lower_transition_zone_conductivity_depth_profile(lowerTransitionZoneTable, water_content * 0.5, group_id);
+[~, ~, lt_sigma_plus_001, lt_sigma_minus_001,lt_Cw001] = compute_lower_transition_zone_conductivity_depth_profile(lowerTransitionZoneTable, water_content * 0.1, group_id);
+[lt_P, lt_T, lt_sigma_plus_0001, lt_sigma_minus_0001, lt_Cw0001] = compute_lower_transition_zone_conductivity_depth_profile(lowerTransitionZoneTable, water_content * 1e-5, group_id);
+
+% Assemble P, T, and sigma
+P = [um_P; ut_P; lt_P];
+T = [um_T; ut_T; lt_T];
+Cw1=[um_Cw1;ut_Cw1;lt_Cw1];
+Cw01=[um_Cw01;ut_Cw01;lt_Cw01];
+Cw001=[um_Cw001;ut_Cw001;lt_Cw001];
+Cw0001=[um_Cw0001;ut_Cw0001;lt_Cw0001];
+% Display water content arrays for verification
+disp('Cw1 (1.0 wt% water content):');
+disp(Cw1);
+disp('Cw01 (0.5 wt% water content):');
+disp(Cw01);
+disp('Cw001 (0.1 wt% water content):');
+disp(Cw001);
+disp('Cw0001 (0.0 wt% water content):');
+disp(Cw0001);
+
+sigma_plus_1 = [um_sigma_plus_1; ut_sigma_plus_1; lt_sigma_plus_1];
+sigma_plus_01 = [um_sigma_plus_01; ut_sigma_plus_01; lt_sigma_plus_01];
+sigma_plus_001 = [um_sigma_plus_001; ut_sigma_plus_001; lt_sigma_plus_001];
+sigma_plus_0001 = [um_sigma_plus_0001; ut_sigma_plus_0001; lt_sigma_plus_0001];
+sigma_minus_1 = [um_sigma_minus_1; ut_sigma_minus_1; lt_sigma_minus_1];
+sigma_minus_01 = [um_sigma_minus_01; ut_sigma_minus_01; lt_sigma_minus_01];
+sigma_minus_001 = [um_sigma_minus_001; ut_sigma_minus_001; lt_sigma_minus_001];
+sigma_minus_0001 = [um_sigma_minus_0001; ut_sigma_minus_0001; lt_sigma_minus_0001];
+
+y_sigma_plus_1 =sigma_plus_1;
+y_sigma_plus_01=sigma_plus_01;
+y_sigma_plus_001=sigma_plus_001;
+y_sigma_plus_0001=sigma_plus_0001;
+y_sigma_minus_1=sigma_minus_1;
+y_sigma_minus_01=sigma_minus_01;
+y_sigma_minus_001=sigma_minus_001;
+y_sigma_minus_0001=sigma_minus_0001;
+
+
+group_id = "KARATO";
+fileName = "../perple_x/Yoshino_AREPS_2013_pyrolite_300k_lower.tab"; % for fig 7
+
+% Perform Calculations
+[columnNames, dataMatrix, ~] = read_tab_format_without_header(fileName);
+[upperMantleTable, upperTransitionZoneTable, lowerTransitionZoneTable, ~] = divideDataByDominantMineral(dataMatrix, columnNames);
+% Compute conductivity-depth profile in the upper mantle
+m = size(upperMantleTable, 1); % Number of rows
+water_content = ones(m, 1);    % Water content (wt%)
+[~, ~, um_sigma_plus_1, um_sigma_minus_1, um_Cw1] = compute_upper_mantle_conductivity_depth_profile(upperMantleTable, water_content, group_id);
+[~, ~, um_sigma_plus_01, um_sigma_minus_01, um_Cw01] = compute_upper_mantle_conductivity_depth_profile(upperMantleTable, water_content * 0.1, group_id);
+[~, ~, um_sigma_plus_001, um_sigma_minus_001, um_Cw001] = compute_upper_mantle_conductivity_depth_profile(upperMantleTable, water_content * 0.01, group_id);
+[um_P, um_T, um_sigma_plus_0001, um_sigma_minus_0001,um_Cw0001] = compute_upper_mantle_conductivity_depth_profile(upperMantleTable, water_content * 1e-5, group_id);
+% Compute conductivity-depth profile in the transition zone
+m = size(upperTransitionZoneTable, 1); % Number of rows
+water_content = ones(m, 1);    % Water content (wt%)
+[~, ~, ut_sigma_plus_1, ut_sigma_minus_1, ut_Cw1] = compute_upper_transition_zone_conductivity_depth_profile(upperTransitionZoneTable, water_content, group_id);
+[~, ~, ut_sigma_plus_01, ut_sigma_minus_01,ut_Cw01] = compute_upper_transition_zone_conductivity_depth_profile(upperTransitionZoneTable, water_content * 0.1, group_id);
+[~, ~, ut_sigma_plus_001, ut_sigma_minus_001,ut_Cw001] = compute_upper_transition_zone_conductivity_depth_profile(upperTransitionZoneTable, water_content * 0.01, group_id);
+[ut_P, ut_T, ut_sigma_plus_0001, ut_sigma_minus_0001, ut_Cw0001] = compute_upper_transition_zone_conductivity_depth_profile(upperTransitionZoneTable, water_content * 1e-5, group_id);
+m = size(lowerTransitionZoneTable, 1); % Number of rows
+water_content = ones(m, 1);    % Water content (wt%)
+[~, ~, lt_sigma_plus_1, lt_sigma_minus_1, lt_Cw1] = compute_lower_transition_zone_conductivity_depth_profile(lowerTransitionZoneTable, water_content, group_id);
+[~, ~, lt_sigma_plus_01, lt_sigma_minus_01,lt_Cw01] = compute_lower_transition_zone_conductivity_depth_profile(lowerTransitionZoneTable, water_content * 0.1, group_id);
+[~, ~, lt_sigma_plus_001, lt_sigma_minus_001,lt_Cw001] = compute_lower_transition_zone_conductivity_depth_profile(lowerTransitionZoneTable, water_content * 0.01, group_id);
+[lt_P, lt_T, lt_sigma_plus_0001, lt_sigma_minus_0001, lt_Cw0001] = compute_lower_transition_zone_conductivity_depth_profile(lowerTransitionZoneTable, water_content * 1e-5, group_id);
+
+sigma_plus_1 = [um_sigma_plus_1; ut_sigma_plus_1; lt_sigma_plus_1];
+sigma_plus_01 = [um_sigma_plus_01; ut_sigma_plus_01; lt_sigma_plus_01];
+sigma_plus_001 = [um_sigma_plus_001; ut_sigma_plus_001; lt_sigma_plus_001];
+sigma_plus_0001 = [um_sigma_plus_0001; ut_sigma_plus_0001; lt_sigma_plus_0001];
+sigma_minus_1 = [um_sigma_minus_1; ut_sigma_minus_1; lt_sigma_minus_1];
+sigma_minus_01 = [um_sigma_minus_01; ut_sigma_minus_01; lt_sigma_minus_01];
+sigma_minus_001 = [um_sigma_minus_001; ut_sigma_minus_001; lt_sigma_minus_001];
+sigma_minus_0001 = [um_sigma_minus_0001; ut_sigma_minus_0001; lt_sigma_minus_0001];
+
+k_sigma_plus_1 =sigma_plus_1;
+k_sigma_plus_01=sigma_plus_01;
+k_sigma_plus_001=sigma_plus_001;
+k_sigma_plus_0001=sigma_plus_0001;
+k_sigma_minus_1=sigma_minus_1;
+k_sigma_minus_01=sigma_minus_01;
+k_sigma_minus_001=sigma_minus_001;
+k_sigma_minus_0001=sigma_minus_0001;
+
+% Convert Pressure to Depth (km) using a standard loop
+depth = zeros(length(P), 1); % Preallocate for efficiency
+for i = 1:length(P)
+    depth(i) = find_depth_for_pressure(P(i) * 0.0001); % Convert bar to GPa
+end
+
+% Plot Temperature Profile
+figure('Color', 'white', 'Units', 'inches', 'Position', [1, 1, 5, 6]);
+plot(depth, T, '-', 'LineWidth', 2, 'DisplayName', 'Temperature');
+set(gca, 'FontSize', 12, 'LineWidth', 1.5);
+ylim([1400, 2000]);
+xlim([200, 700]);
+xlabel('Depth (km)', 'FontSize', 14, 'FontWeight', 'bold');
+ylabel('T (K)', 'FontSize', 14, 'FontWeight', 'bold');
+title('Temperature Profile', 'FontSize', 16, 'FontWeight', 'bold');
+legend('Location', 'best', 'FontSize', 12);
+box on;
+
+% Plot Upper Bound Conductivities
+figure('Color', 'white', 'Units', 'inches', 'Position', [1, 1, 6, 11]);
+subplot(2,1,1);
+plot(depth, y_sigma_plus_1, '-', 'LineWidth', 2, 'DisplayName', '1 wt%');
+hold on;
+plot(depth, y_sigma_plus_01, '-', 'LineWidth', 2, 'DisplayName', '0.5 wt%');
+plot(depth, y_sigma_plus_001, '-', 'LineWidth', 2, 'DisplayName', '0.1 wt%');
+plot(depth, y_sigma_plus_0001, '-', 'LineWidth', 2, 'DisplayName', '1e-5 wt%');
+hold off;
+set(gca, 'YScale', 'log', 'FontSize', 12, 'LineWidth', 1.5);
+ylim([1e-3, 10]);
+xlim([200, 700]);
+% xlabel('Depth (km)', 'FontSize', 14, 'FontWeight', 'bold');
+ylabel('Conductivity (S/m)', 'FontSize', 14, 'FontWeight', 'bold');
+title('Yoshino model - HS upper bound', 'FontSize', 16, 'FontWeight', 'bold');
+legend('Location', 'best', 'FontSize', 12);
+box on;
+subplot(2,1,2);
+plot(depth, k_sigma_plus_1, '-', 'LineWidth', 2, 'DisplayName', '1 wt%');
+hold on;
+plot(depth, k_sigma_plus_01, '-', 'LineWidth', 2, 'DisplayName', '0.1 wt%');
+plot(depth, k_sigma_plus_001, '-', 'LineWidth', 2, 'DisplayName', '0.01 wt%');
+plot(depth, k_sigma_plus_0001, '-', 'LineWidth', 2, 'DisplayName', '1e-5 wt%');
+hold off;
+set(gca, 'YScale', 'log', 'FontSize', 12, 'LineWidth', 1.5);
+ylim([1e-3, 10]);
+xlim([200, 700]);
+xlabel('Depth (km)', 'FontSize', 14, 'FontWeight', 'bold');
+ylabel('Conductivity (S/m)', 'FontSize', 14, 'FontWeight', 'bold');
+title('Karato model - HS upper bound', 'FontSize', 16, 'FontWeight', 'bold');
+legend('Location', 'best', 'FontSize', 12);
+box on;
+
+% Export the plot to a high-quality PNG file
+exportgraphics(gcf, 'Yoshino_AREPS_2013_fig8_ub.png', 'Resolution', 300);
+
+% Plot Lower Bound Conductivities
+figure('Color', 'white', 'Units', 'inches', 'Position', [1, 1, 6, 11]);
+subplot(2,1,1);
+plot(depth, y_sigma_minus_1, '-', 'LineWidth', 2, 'DisplayName', '1 wt%');
+hold on;
+plot(depth, y_sigma_minus_01, '-', 'LineWidth', 2, 'DisplayName', '0.5 wt%');
+plot(depth, y_sigma_minus_001, '-', 'LineWidth', 2, 'DisplayName', '0.1 wt%');
+plot(depth, y_sigma_minus_0001, '-', 'LineWidth', 2, 'DisplayName', '1e-5 wt%');
+hold off;
+set(gca, 'YScale', 'log', 'FontSize', 12, 'LineWidth', 1.5);
+ylim([1e-3, 10]);
+xlim([200, 700]);
+% xlabel('Depth (km)', 'FontSize', 14, 'FontWeight', 'bold');
+ylabel('Conductivity (S/m)', 'FontSize', 14, 'FontWeight', 'bold');
+title('Lower Bound Conductivity', 'FontSize', 16, 'FontWeight', 'bold');
+legend('Location', 'best', 'FontSize', 12);
+box on;
+subplot(2,1,2);
+plot(depth, k_sigma_minus_1, '-', 'LineWidth', 2, 'DisplayName', '1 wt%');
+hold on;
+plot(depth, k_sigma_minus_01, '-', 'LineWidth', 2, 'DisplayName', '0.1 wt%');
+plot(depth, k_sigma_minus_001, '-', 'LineWidth', 2, 'DisplayName', '0.01 wt%');
+plot(depth, k_sigma_minus_0001, '-', 'LineWidth', 2, 'DisplayName', '1e-5 wt%');
+hold off;
+set(gca, 'YScale', 'log', 'FontSize', 12, 'LineWidth', 1.5);
+ylim([1e-3, 10]);
+xlim([200, 700]);
+xlabel('Depth (km)', 'FontSize', 14, 'FontWeight', 'bold');
+ylabel('Conductivity (S/m)', 'FontSize', 14, 'FontWeight', 'bold');
+title('Lower Bound Conductivity', 'FontSize', 16, 'FontWeight', 'bold');
+legend('Location', 'best', 'FontSize', 12);
+box on;
+% Export the plot to a high-quality PNG file
+exportgraphics(gcf, 'Yoshino_AREPS_2013_fig8_lb.png', 'Resolution', 300);
+
+
+
+

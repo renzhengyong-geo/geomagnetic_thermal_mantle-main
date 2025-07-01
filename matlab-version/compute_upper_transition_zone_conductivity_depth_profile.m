@@ -22,7 +22,7 @@ function [P, T, aggregate_sigma_plus, aggregate_sigma_minus,total_Cw] = ...
     missingColumns = setdiff(requiredColumns, upperTransitionZoneTable.Properties.VariableNames);
     assert(isempty(missingColumns), 'Error: Missing required columns: %s.', strjoin(missingColumns, ', '));
     assert(m == length(water_content), 'Error: Rows in upperTransitionZoneTable must match length of water_content.');
-    assert(ismember(lower(group_id), {'karato', 'yashino'}), 'Error: group_id must be "karato" or "yashino".');
+    assert(ismember(lower(group_id), {'karato', 'yoshino'}), 'Error: group_id must be "karato" or "yashino".');
 
     % -------------------------------------------------------------------------
     % Extract Data
@@ -67,10 +67,10 @@ function [P, T, aggregate_sigma_plus, aggregate_sigma_minus,total_Cw] = ...
                 sigma(i, 1) = Karato_wadsleyite_conductivity(t, Cw(i, 1), p);
                 sigma(i, 2) = Karato_garnet_conductivity(t, Cw(i, 2), p);
                 sigma(i, 3) = Karato_ringwoodite_conductivity(t, Cw(i, 3), p);
-            case 'yashino'
-                sigma(i, 1) = Yashino_wadsleyite_conductivity(t, Cw(i, 1), p);
-                sigma(i, 2) = Yashino_garnet_conductivity(t, Cw(i, 2), p);
-                sigma(i, 3) = Yashino_ringwoodite_conductivity(t, Cw(i, 3), p);
+            case 'yoshino'
+                sigma(i, 1) = Yoshino_wadsleyite_conductivity(t, Cw(i, 1), p, 1.0);
+                sigma(i, 2) = Yoshino_garnet_conductivity(t, Cw(i, 2), p);
+                sigma(i, 3) = Yoshino_ringwoodite_conductivity(t, Cw(i, 3), p, 1.0);
             otherwise
                 error('Unexpected group_id value: %s', group_id);
         end
@@ -81,7 +81,11 @@ function [P, T, aggregate_sigma_plus, aggregate_sigma_minus,total_Cw] = ...
     % -------------------------------------------------------------------------
     aggregate_sigma_plus = zeros(m, 1);
     aggregate_sigma_minus = zeros(m, 1);
-
+    
+    Cw
+    f
+    sigma
+    
     for i = 1:m
         fractions = f(i, :) / 100; % Convert to fractions
         conductivities = sigma(i, :); % Conductivities (S/m)

@@ -46,9 +46,9 @@ function sigma = Yoshino_clinopyroxene_conductivity(temperature, water_content,p
         water_content = cell2mat(water_content); % Convert cell array to numeric if necessary
     end
 
-    % Check if water_content is within the range of 0 to 1
-    if any(water_content < 0) || any(water_content > 1)
-        error('Water content must be in the range of 0 to 1.');
+    % Check if water_content is within the range of 0 to 100
+    if any(water_content < 0) || any(water_content > 200)
+        error('Water content must be in the range of 0 to 100.');
     end
 
     % Sum the conductivities
