@@ -63,9 +63,9 @@ function sigma = Yoshino_wadsleyite_conductivity(T, Cw, P, Xfe)
     if any(Cw < 0) || any(Cw > 100)
         error('Water content (Cw) must be in the range of 0 to 100 (wt%).');
     end
-    if any(Xfe < 0) || any(Xfe > 1) % XFe=1.0！is assumed by testing
-        error('Iron content (Xfe) must be in the range of 0 to 1.');
-    end
+    % if any(Xfe < 0) || any(Xfe > 1) % XFe=1.0！is assumed by testing
+    %     error('Iron content (Xfe) must be in the range of 0 to 1.');
+    % end
 
     % Compute conductivity
     sigma = sigma_0i * exp(-delta_Hi / (k * T)) + ...
