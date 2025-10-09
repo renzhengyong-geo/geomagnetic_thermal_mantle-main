@@ -1,0 +1,18 @@
+Plate Cooling Model Parameters and References
+=============================================
+
+Primary References:
+1. Turcotte, D. L., & Schubert, G. (2014). Geodynamics (3rd ed.). Cambridge University Press.
+2. Parsons, B., & Sclater, J. G. (1977). JGR, 82(5), 803-827.
+3. Stein, C. A., & Stein, S. (1992). Nature, 359(6391), 123-129.
+4. McKenzie, D. P. (1967). JGR, 72(24), 6261-6273.
+5. Carslaw, H. S., & Jaeger, J. C. (1959). Conduction of Heat in Solids.
+
+Model Parameters:
+Thermal diffusivity (κ): 1.0e-06 m²/s
+Mantle temperature: 1350°C
+Surface temperature: 0°C
+Thermal conductivity: 3.0 W/m/K
+
+Governing Equation:
+T(z,t) = T_surface + (T_mantle - T_surface) * erf(z / (2 * sqrt(κ * t)))

@@ -1,0 +1,24 @@
+Plate Cooling Model with Carbonatite Peridotite Solidus Analysis
+================================================================
+
+References:
+1. Turcotte & Schubert (2014) - Geodynamics
+2. Parsons & Sclater (1977) - JGR
+3. Dasgupta & Hirschmann (2006) - Nature 440, 659-662
+
+Carbonatite Solidus Data (25000 ppm CO2):
+Pressure (GPa)	Depth (km)	Temperature (°C)
+1.0		30.0		950
+2.0		60.0		1000
+3.0		90.0		1050
+4.0		120.0		1100
+5.0		150.0		1150
+6.0		180.0		1200
+7.0		210.0		1250
+8.0		240.0		1300
+9.0		270.0		1350
+10.0		300.0		1400
+11.0		330.0		1450
+
+Intersection Analysis:
+Lithospheric geotherms intersect carbonatite solidus at shallow depths in young lithosphere.
