@@ -24,10 +24,10 @@ clear; clc; close all;
 
 %% MODEL PARAMETERS
 parameters.T_surface = 0;   % Ocean bottom temperature in degree
-parameters.T_mantle = 1330; % Mantle temperature (1330°C): Parsons & Sclater (1977)
+parameters.T_mantle = 1315; % Mantle temperature (1330°C): Parsons & Sclater (1977)
 parameters.kappa = 8.04e-7; % Thermal diffusivity (8.04 × 10⁻⁷ m²/s): Stein & Stein (1992)
 parameters.k_thermal = 3.138; % Thermal conductivity (3.138 W/m/K): Parsons & Sclater (1977)
-parameters.plate_thickness = 95e3; % Plate thickness (95 km): Parsons & Sclater (1977)
+parameters.plate_thickness = 125e3; % Plate thickness (95 km): Parsons & Sclater (1977)
 parameters.n_terms = 100;
 
 %% Age and depth ranges (starting from non-zero age)
@@ -84,7 +84,7 @@ legend([h1(1), h2(1)], {'Half-Space Model', 'Plate Model (95 km)'}, ...
        'Location', 'southeast', 'FontSize', 12);
 
 % Add plate thickness reference line
-yline(95, 'k--', 'LineWidth', 1, 'Alpha', 0.7, 'Label', 'Plate Base (95 km)', ...
+yline(125, 'k--', 'LineWidth', 1, 'Alpha', 0.7, 'Label', 'Plate Base (125 km)', ...
       'LabelHorizontalAlignment', 'left', 'FontSize', 10);
 
 saveas(gcf, 'Age_Depth_Contours.png', 'png');
@@ -222,12 +222,12 @@ ylim([0, 150]);
 legend('Location', 'southeast', 'FontSize', 12, 'NumColumns', 2);
 
 % Add plate thickness reference line
-yline(95, 'k--', 'LineWidth', 2, 'Label', 'Plate Base (95 km)', ...
+yline(125, 'k--', 'LineWidth', 2, 'Label', 'Plate Base (125 km)', ...
       'LabelHorizontalAlignment', 'left', 'FontSize', 12, ...
       'Color', [0.3 0.3 0.3]);
 
 % Add mantle temperature reference line
-xline(1330, 'r-', 'LineWidth', 1, 'Label', 'Mantle Temperature (1330°C)', ...
+xline(1315, 'r-', 'LineWidth', 1, 'Label', 'Mantle Temperature (1315°C)', ...
       'LabelVerticalAlignment', 'bottom', 'FontSize', 10, ...
       'Color', [0.7 0.2 0.2], 'Alpha', 0.7);
 
