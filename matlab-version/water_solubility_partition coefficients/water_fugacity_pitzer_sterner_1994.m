@@ -15,7 +15,6 @@ function output = water_fugacity_pitzer_sterner_1994(function_name, varargin)
 
     % Gas constant
     R = 8314510; % Pa*cc/(K*mol)
-    
     % Dispatch to appropriate function
     switch function_name
         case 'PSeos'

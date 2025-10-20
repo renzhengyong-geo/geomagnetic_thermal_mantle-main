@@ -16,8 +16,7 @@ function output = water_partition_wad_ring_gt(Temperature, Pressure)
     %      Storage Capacity Model. AGU Advances, 2(1), e2020AV000323.
     %      https://doi.org/10.1029/2020AV000323
     %
-    %   2. Inoue, T., Katsuda, M., Yurimoto, H., & Irifune, T. (2006). 
-    %      H2O partitioning between wadsleyite, ringwoodite, and garnet.
+    %   2. 13.5
 
     % === Convert temperature and pressure to appropriate units ===
     T_Kelvin = Temperature + 273.15; % Convert °C to Kelvin
