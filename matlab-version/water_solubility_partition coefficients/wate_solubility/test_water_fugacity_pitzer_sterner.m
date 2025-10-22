@@ -22,6 +22,8 @@ for t = 1:length(temperatures)
         pressure_GPa = pressure_range(p);
         % Call the PSfugacity function from water_fugacity_functions
         fugacity_values(p) = water_fugacity_pitzer_sterner_1994('PSfugacity', pressure_GPa, temperature_K - 273.15);
+        fugacity_values(p) = water_fugacity_pitzer_sterner(pressure_GPa, temperature_K - 273.15);
+
     end
     
     % Plot fugacity vs. pressure

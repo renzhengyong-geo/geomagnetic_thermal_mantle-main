@@ -44,5 +44,5 @@ function [C_OH, C_H2O_ppm] = olivine_water_solubility(P_GPa, T_C)
     
     % Convert to weight ppm H2O using empirical conversion factor
     % Based on: 1 H/10^6 Si = 0.06 ppm H2O (empirical relationship)
-    C_H2O_ppm = C_OH * 0.06;  % Units: H/10^6 Si → ppm H2O in olivine
+    C_H2O_ppm = C_OH * 0.06;  % Units: H/10^6 Si → ppm H2O in o
 end

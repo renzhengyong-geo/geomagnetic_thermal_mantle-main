@@ -1,8 +1,12 @@
 % Define the input 2D array for continental geotherm
 % Format: [Temperature (°C), Pressure (kbar)]
 continental_geotherm = [
-    1000, 40;
-    1000, 40;
+    1000, 20;
+    1000, 20;
+    1000, 20;
+    1000, 20;
+    1000, 20;
+    1000, 20;
     ];
 
 % Convert temperature from °C to Kelvin
@@ -15,7 +19,7 @@ Delta_H_1bar = -4563; % J/mol for Al-free enstatite
 Delta_H_1bar_Al = -79685; % J/mol for Al-bearing enstatite
 Delta_V_solid = 12.1; % cm^3/mol for Al-free enstatite
 Delta_V_solid_Al = 11.3; % cm^3/mol for Al-bearing enstatite
-R = 8.3145; % J/(mol·K), gas constant
+R = 8.314; % J/(mol·K), gas constant
 
 % Initialize arrays for the solubility contributions
 total_water_solubility = zeros(n_points,1);
@@ -56,7 +60,6 @@ end
 
 al_free_water_solubility
 al_bearing_water_solubility
-total_water_solubility
 % Create a high-quality figure for publication
 figure('Units', 'normalized', 'Position', [0.1, 0.1, 0.35, 0.7]); % Adjusted figure size
 hold on;
